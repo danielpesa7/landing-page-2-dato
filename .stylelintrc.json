@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": ["assets/**", "node_modules/**", "**/*.min.css", "tasks/**", "new_design/**"],
+  "rules": {
+    "color-function-notation": null,
+    "color-function-alias-notation": null,
+    "alpha-value-notation": null,
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "media-feature-range-notation": null,
+    "property-no-vendor-prefix": null,
+    "rule-empty-line-before": null
+  }
+}
