@@ -25,9 +25,6 @@
     <body>
         <a class="skip-link" href="#hero">Skip to content</a>
 
-        <!-- Animated background particles -->
-        <canvas id="particle-canvas"></canvas>
-
         <!-- Navigation -->
         <nav class="nav" aria-label="Primary">
             <div class="nav-inner">
@@ -66,81 +63,84 @@
         </nav>
 
         <!-- Hero Section -->
-        <!-- R3: preserve id="hero" — used as anchor by skip-link and wordmark in nav (R2). -->
+        <!-- id="hero" preserved as anchor target for skip-link and wordmark (R2). -->
         <section id="hero" class="hero">
-            <div class="hero-content">
-                <div class="hero-badge" data-animate="fade-up">
-                    <span class="badge-dot"></span>
-                    IT & AI Solutions from Colombia to the World
+            <div class="hero-inner">
+                <div class="punto-mark" aria-hidden="true">
+                    <div class="ring r1"></div>
+                    <div class="ring r2"></div>
+                    <div class="ring r3"></div>
+                    <div class="core"></div>
+                    <div class="label" data-i18n="hero.mark">El Punto · The mark</div>
                 </div>
-                <h1 class="hero-title" data-animate="fade-up" data-delay="100">
-                    We turn <span class="text-gradient">data</span> into <br />your greatest asset
-                </h1>
-                <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
-                    Enterprise-grade data engineering, cloud architecture, and artificial
-                    intelligence solutions designed to accelerate your digital transformation.
-                </p>
-                <div class="hero-actions" data-animate="fade-up" data-delay="300">
-                    <a href="#services" class="btn btn-primary" id="hero-cta-services">
-                        Explore Services
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path
-                                d="M3 8h10M9 4l4 4-4 4"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
-                    </a>
-                    <a href="#team" class="btn btn-ghost" id="hero-cta-team">Meet the Team</a>
-                </div>
-                <div class="hero-stats" data-animate="fade-up" data-delay="400">
-                    <div class="stat">
-                        <span class="stat-number" data-count="50">0</span
-                        ><span class="stat-suffix">+</span>
-                        <span class="stat-label">Projects Delivered</span>
+                <div>
+                    <div class="eyebrow hero-eyebrow" data-i18n="hero.eyebrow">
+                        2DATO · Bogotá → Worldwide
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number" data-count="5">0</span
-                        ><span class="stat-suffix">+</span>
-                        <span class="stat-label">Years Experience</span>
+                    <h1 class="hero-title" data-i18n-html="hero.title">
+                        From a single point<br />of data to
+                        <span class="green">decisions<span class="punto"></span></span><br />that
+                        <span class="green">run themselves.</span>
+                    </h1>
+                    <p class="hero-lede" data-i18n="hero.lede">
+                        2DATO is a data &amp; AI consultancy for organizations that have outgrown
+                        spreadsheets and dashboards. We design the data foundation, deploy the
+                        models, and build the agents that run on top — end to end.
+                    </p>
+                    <div class="hero-actions">
+                        <a
+                            href="#contact"
+                            class="btn btn-primary"
+                            id="hero-cta-contact"
+                            data-i18n="nav.cta"
+                        >
+                            Request a proposal →
+                        </a>
+                        <a
+                            href="#capabilities"
+                            class="btn btn-ghost"
+                            id="hero-cta-capabilities"
+                            data-i18n="hero.see"
+                        >
+                            See capabilities
+                        </a>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number" data-count="3">0</span>
-                        <span class="stat-label">Expert Engineers</span>
+                    <div class="hero-trust">
+                        <span data-i18n="hero.tag">Data-Driven · AI-Powered</span>
+                        <span class="sep" aria-hidden="true"></span>
+                        <span>Azure · AWS · Snowflake · Databricks</span>
                     </div>
-                </div>
-            </div>
-            <div class="hero-visual" data-animate="fade-left" data-delay="200">
-                <div class="hero-glow"></div>
-                <div class="code-window">
-                    <div class="code-header">
-                        <span class="code-dot code-dot--red"></span>
-                        <span class="code-dot code-dot--yellow"></span>
-                        <span class="code-dot code-dot--green"></span>
-                        <span class="code-title">pipeline.py</span>
-                    </div>
-                    <pre
-                        class="code-body"
-                    ><code><span class="code-keyword">from</span> <span class="code-module">twodato</span> <span class="code-keyword">import</span> Pipeline
-
-<span class="code-keyword">class</span> <span class="code-class">DataTransform</span>(Pipeline):
-    <span class="code-keyword">def</span> <span class="code-function">execute</span>(self, data):
-        <span class="code-comment"># Transform raw data into insights</span>
-        cleaned = self.<span class="code-function">clean</span>(data)
-        enriched = self.<span class="code-function">enrich</span>(cleaned)
-        <span class="code-keyword">return</span> self.<span class="code-function">deploy</span>(enriched)
-
-pipeline = DataTransform()
-result = pipeline.<span class="code-function">run</span>()
-<span class="code-comment"># ✓ Pipeline deployed successfully</span>
-<span class="code-cursor">|</span></code></pre>
                 </div>
             </div>
         </section>
+
+        <!-- Outcomes strip -->
+        <!-- TODO(R12): replace placeholder figures (40%, 60%, 3, LATAM+) with verified
+             outcomes before merge to main. Tracked in tasks/redesign-plan.md Res #3. -->
+        <div class="outcomes">
+            <div class="outcomes-inner">
+                <div class="outcome">
+                    <div class="num">40<span class="pct">%</span></div>
+                    <div class="lab" data-i18n="out.1">Faster data retrieval, on average</div>
+                </div>
+                <div class="outcome">
+                    <div class="num">60<span class="pct">%</span></div>
+                    <div class="lab" data-i18n="out.2">Reduction in manual processing</div>
+                </div>
+                <div class="outcome">
+                    <div class="num">3</div>
+                    <div class="lab" data-i18n="out.3">
+                        Industries served — energy, telecom, CPG
+                    </div>
+                </div>
+                <div class="outcome">
+                    <div class="num">LATAM<span class="pct pct--latam">+</span></div>
+                    <div class="lab" data-i18n="out.4">
+                        Engagements across Latin America &amp; beyond
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- About Section -->
         <section id="about" class="about">
