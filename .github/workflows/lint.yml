@@ -4,9 +4,9 @@ name: Lint
 
 on:
   pull_request:
-    branches: ['main']
+    branches: ['main', 'feat/redesign']
   push:
-    branches: ['main']
+    branches: ['main', 'feat/redesign']
 
 permissions:
   contents: read
