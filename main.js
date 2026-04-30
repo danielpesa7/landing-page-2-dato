@@ -108,7 +108,7 @@ function initParticles() {
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
+        particles.forEach((p) => {
             p.update();
             p.draw();
         });
@@ -132,22 +132,25 @@ function initParticles() {
 function initScrollAnimations() {
     const elements = document.querySelectorAll('[data-animate]');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = parseInt(entry.target.dataset.delay) || 0;
-                setTimeout(() => {
-                    entry.target.classList.add('in-view');
-                }, delay);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
-    });
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const delay = parseInt(entry.target.dataset.delay) || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('in-view');
+                    }, delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px',
+        }
+    );
 
-    elements.forEach(el => observer.observe(el));
+    elements.forEach((el) => observer.observe(el));
 }
 
 /* --- Navigation --- */
@@ -158,15 +161,19 @@ function initNavigation() {
 
     // Scroll effect
     let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        if (scrollY > 60) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-        lastScroll = scrollY;
-    }, { passive: true });
+    window.addEventListener(
+        'scroll',
+        () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            lastScroll = scrollY;
+        },
+        { passive: true }
+    );
 
     // Mobile toggle
     if (toggle && links) {
@@ -177,7 +184,7 @@ function initNavigation() {
         });
 
         // Close menu on link click
-        links.querySelectorAll('.nav-link').forEach(link => {
+        links.querySelectorAll('.nav-link').forEach((link) => {
             link.addEventListener('click', () => {
                 toggle.classList.remove('active');
                 links.classList.remove('active');
@@ -187,7 +194,7 @@ function initNavigation() {
     }
 
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
             const targetId = anchor.getAttribute('href');
             if (targetId === '#') return;
@@ -206,18 +213,21 @@ function initNavigation() {
 function initCounters() {
     const counters = document.querySelectorAll('[data-count]');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.dataset.count);
-                animateCounter(el, 0, target, 1800);
-                observer.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.count);
+                    animateCounter(el, 0, target, 1800);
+                    observer.unobserve(el);
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
 
-    counters.forEach(counter => observer.observe(counter));
+    counters.forEach((counter) => observer.observe(counter));
 }
 
 function animateCounter(el, start, end, duration) {

@@ -1,0 +1,9 @@
+# Commits listed here are skipped by `git blame` when run with
+# `--ignore-revs-file .git-blame-ignore-revs` (or with
+# `git config blame.ignoreRevsFile .git-blame-ignore-revs`).
+#
+# Rule: only mass-mechanical commits (formatting, renames) belong here.
+# Never list semantic/refactor commits.
+
+# style: initial prettier reformat
+225da2bca87341522176b15e01bdde6303785bd8

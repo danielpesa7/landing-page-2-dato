@@ -18,14 +18,14 @@ Keep the repo small, dependency-lean, and free of rot. Name is a nod to the `pla
 
 ## Tools
 
-| Tool | Use when |
-|------|----------|
-| `knip` | Post-PR 2 — dead exports, unused files, orphan deps |
-| `depcheck` | Post-PR 2 — unused / missing `package.json` deps |
-| `purgecss --dry-run` | Finds unused CSS selectors against `index.html` + `main.js` |
-| `stylelint --report-needless-disables` | Dead `stylelint-disable` pragmas |
-| `eslint --report-unused-disable-directives` | Dead ESLint disables |
-| `imagemin --lint` / custom find script | Unreferenced images in `assets/` |
+| Tool                                        | Use when                                                    |
+| ------------------------------------------- | ----------------------------------------------------------- |
+| `knip`                                      | Post-PR 2 — dead exports, unused files, orphan deps         |
+| `depcheck`                                  | Post-PR 2 — unused / missing `package.json` deps            |
+| `purgecss --dry-run`                        | Finds unused CSS selectors against `index.html` + `main.js` |
+| `stylelint --report-needless-disables`      | Dead `stylelint-disable` pragmas                            |
+| `eslint --report-unused-disable-directives` | Dead ESLint disables                                        |
+| `imagemin --lint` / custom find script      | Unreferenced images in `assets/`                            |
 
 ## Cadence
 
@@ -45,7 +45,7 @@ Keep the repo small, dependency-lean, and free of rot. Name is a nod to the `pla
   - `chore: delete 2 orphan images from assets/ (unreferenced)`
 - Add removed public filenames to a short `DELETED.md` section in the PR description so search engines aren't blindsided
 
-## What plankton-code-quality is *not*
+## What plankton-code-quality is _not_
 
 - Not a refactor agent — it removes, it doesn't restructure. Restructuring is a separate PR owned by the feature skill.
 - Not a formatter — that's `coding-standards`.
@@ -55,11 +55,11 @@ Keep the repo small, dependency-lean, and free of rot. Name is a nod to the `pla
 
 Each sweep PR ends with a short table in the PR description:
 
-| Tool | Items flagged | Removed | Kept (with reason) |
-|------|---------------|---------|--------------------|
-| purgecss | 27 | 24 | 3 (used by dynamic `classList.add` in `main.js`) |
-| depcheck | 4 | 3 | 1 (`husky` — used in `prepare` script) |
-| ... | | | |
+| Tool     | Items flagged | Removed | Kept (with reason)                               |
+| -------- | ------------- | ------- | ------------------------------------------------ |
+| purgecss | 27            | 24      | 3 (used by dynamic `classList.add` in `main.js`) |
+| depcheck | 4             | 3       | 1 (`husky` — used in `prepare` script)           |
+| ...      |               |         |                                                  |
 
 ## When in doubt
 

@@ -6,9 +6,9 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
-    branches: ["main"]
+    branches: ['main']
   workflow_dispatch:
 
 # Default: read-only at the workflow level. Deploy job elevates per-job.
@@ -17,7 +17,7 @@ permissions:
 
 # Single in-flight Pages deployment; queued runs are skipped (latest wins).
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
