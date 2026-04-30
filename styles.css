@@ -446,11 +446,18 @@ section {
     background: var(--navy-15);
 }
 
-/* Punto Mark — three rings + green core with pulse + ripple */
+/* Punto Mark — three rings + green core with pulse + ripple.
+   Inner `.punto-mark-graphic` carries `aria-hidden="true"` so the rings/core
+   are decorative-only; sibling `.label` stays exposed to AT for translation. */
 .punto-mark {
     position: relative;
     width: 320px;
     height: 320px;
+}
+
+.punto-mark .punto-mark-graphic {
+    position: absolute;
+    inset: 0;
 }
 
 .punto-mark .ring {
@@ -534,12 +541,19 @@ section {
     white-space: nowrap;
 }
 
-/* Reduced motion: pause Punto pulse + ripple instead of removing them
-   (keeps the rendered shape stable, just freezes the loop). */
+/* Reduced motion: drop the pulse on the core (it stays at scale 1) and
+   suppress the ripple ring entirely. `animation-play-state: paused` would
+   freeze the ripple at frame 0 (opacity 0.5) leaving a permanent halo,
+   which is louder than the active motion — `animation: none` + `opacity: 0`
+   is the cleaner reduced-motion outcome. */
 @media (prefers-reduced-motion: reduce) {
     .punto-mark .core,
     .punto-mark .core::after {
-        animation-play-state: paused;
+        animation: none;
+    }
+
+    .punto-mark .core::after {
+        opacity: 0;
     }
 }
 
