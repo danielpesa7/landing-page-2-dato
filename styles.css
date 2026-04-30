@@ -851,10 +851,13 @@ section {
     max-width: 520px;
 }
 
+/* `.when` was rgb(255 255 255 / 45%) in the prototype — that lands at ~4.0:1
+   on navy at 11px, below WCAG AA (4.5:1 for normal text). Bumped to 60% to
+   reach ~5.5:1. Same family of fix as the contrast debt tracked for R10. */
 .step .when {
     font-family: var(--mono);
     font-size: 11px;
-    color: rgb(255 255 255 / 45%);
+    color: rgb(255 255 255 / 60%);
     letter-spacing: 1px;
     padding-top: 6px;
     white-space: nowrap;
