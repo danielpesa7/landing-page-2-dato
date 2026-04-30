@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Lockfiles
+package-lock.json
+
+# Minified
+*.min.css
+*.min.js
+
+# Binary assets
+assets/
+
+# Local-only working dirs (also gitignored)
+tasks/
+new_design/
+
+# Git
+.git/
