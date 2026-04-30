@@ -1,6 +1,6 @@
 # Deploy static content to GitHub Pages
 # - push to main: build + deploy to https://www.2dato.co
-# - pull_request to main: dry-run build only (no deploy) to catch artifact errors before merge
+# - pull_request to main or feat/redesign: dry-run build only (no deploy) to catch artifact errors before merge
 # - workflow_dispatch: manual deploy from the Actions tab
 name: Deploy static content to Pages
 
@@ -8,7 +8,7 @@ on:
   push:
     branches: ['main']
   pull_request:
-    branches: ['main']
+    branches: ['main', 'feat/redesign']
   workflow_dispatch:
 
 # Default: read-only at the workflow level. Deploy job elevates per-job.
