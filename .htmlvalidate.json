@@ -4,6 +4,7 @@
     "no-raw-characters": "off",
     "void-style": "off",
     "no-implicit-button-type": "off",
-    "wcag/h30": "off"
+    "wcag/h30": "off",
+    "doctype-style": ["error", { "style": "lowercase" }]
   }
 }

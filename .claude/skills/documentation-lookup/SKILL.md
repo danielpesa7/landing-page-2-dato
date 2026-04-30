@@ -17,20 +17,20 @@ Before writing code that touches an external library, framework, or API — look
 
 ## Packages this repo will pull in (PRs 2–6)
 
-| Package | Why | Docs entry point |
-|---------|-----|------------------|
-| prettier | Formatter | https://prettier.io/docs/en/ |
-| eslint, @eslint/js | JS lint (flat config) | https://eslint.org/docs/latest/ |
-| stylelint, stylelint-config-standard | CSS lint | https://stylelint.io/ |
-| html-validate | HTML lint | https://html-validate.org/ |
-| @playwright/test | E2E | https://playwright.dev/docs/intro |
-| @axe-core/playwright | A11y scan | https://github.com/dequelabs/axe-core-npm/tree/develop/packages/playwright |
-| sharp-cli (or Squoosh CLI) | Image pipeline | https://github.com/vseventer/sharp-cli |
+| Package                              | Why                   | Docs entry point                                                           |
+| ------------------------------------ | --------------------- | -------------------------------------------------------------------------- |
+| prettier                             | Formatter             | https://prettier.io/docs/en/                                               |
+| eslint, @eslint/js                   | JS lint (flat config) | https://eslint.org/docs/latest/                                            |
+| stylelint, stylelint-config-standard | CSS lint              | https://stylelint.io/                                                      |
+| html-validate                        | HTML lint             | https://html-validate.org/                                                 |
+| @playwright/test                     | E2E                   | https://playwright.dev/docs/intro                                          |
+| @axe-core/playwright                 | A11y scan             | https://github.com/dequelabs/axe-core-npm/tree/develop/packages/playwright |
+| sharp-cli (or Squoosh CLI)           | Image pipeline        | https://github.com/vseventer/sharp-cli                                     |
 
 ## Prompts that work
 
 - `mcp__context7__resolve-library-id "@playwright/test"` → get stable ID
-- `mcp__context7__query-docs` with a specific question: *"How do I configure projects for desktop and mobile viewport in playwright.config.ts?"*
+- `mcp__context7__query-docs` with a specific question: _"How do I configure projects for desktop and mobile viewport in playwright.config.ts?"_
 
 Ask narrow questions. Broad ones ("how does Playwright work") waste tokens and return boilerplate.
 
