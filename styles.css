@@ -375,3 +375,264 @@ section {
         font-size: 12px;
     }
 }
+
+/* ========================================================================
+   Section: Hero (R3)
+   ======================================================================== */
+
+.hero {
+    padding: 100px 32px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.hero-eyebrow {
+    margin-bottom: 28px;
+}
+
+.hero-title {
+    font-family: var(--display);
+    font-size: 72px;
+    line-height: 1.02;
+    letter-spacing: -2.5px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 24px;
+}
+
+.hero-title .green {
+    color: var(--green);
+}
+
+.hero-lede {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--navy-75);
+    max-width: 540px;
+    margin: 0 0 36px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero-trust {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--navy-55);
+}
+
+.hero-trust .sep {
+    width: 1px;
+    height: 16px;
+    background: var(--navy-15);
+}
+
+/* Punto Mark — three rings + green core with pulse + ripple.
+   Inner `.punto-mark-graphic` carries `aria-hidden="true"` so the rings/core
+   are decorative-only; sibling `.label` stays exposed to AT for translation. */
+.punto-mark {
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+.punto-mark .punto-mark-graphic {
+    position: absolute;
+    inset: 0;
+}
+
+.punto-mark .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px dashed var(--navy-15);
+}
+
+.punto-mark .r1 {
+    inset: 0;
+}
+
+.punto-mark .r2 {
+    inset: 36px;
+    border-color: var(--navy-35);
+}
+
+.punto-mark .r3 {
+    inset: 72px;
+    border-color: var(--navy-55);
+    border-style: solid;
+    opacity: 0.3;
+}
+
+.punto-mark .core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 110px;
+    height: 110px;
+    margin: -55px 0 0 -55px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 14px 50px rgb(6 170 120 / 42%);
+    animation: punto-pulse 4s ease-in-out infinite;
+}
+
+.punto-mark .core::after {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 2px solid var(--green);
+    opacity: 0.4;
+    animation: punto-ripple 4s ease-out infinite;
+}
+
+@keyframes punto-pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes punto-ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.65);
+        opacity: 0;
+    }
+}
+
+.punto-mark .label {
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--navy-55);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Reduced motion: drop the pulse on the core (it stays at scale 1) and
+   suppress the ripple ring entirely. `animation-play-state: paused` would
+   freeze the ripple at frame 0 (opacity 0.5) leaving a permanent halo,
+   which is louder than the active motion — `animation: none` + `opacity: 0`
+   is the cleaner reduced-motion outcome. */
+@media (prefers-reduced-motion: reduce) {
+    .punto-mark .core,
+    .punto-mark .core::after {
+        animation: none;
+    }
+
+    .punto-mark .core::after {
+        opacity: 0;
+    }
+}
+
+/* ========================================================================
+   Section: Outcomes strip (R3)
+   ======================================================================== */
+
+.outcomes {
+    background: #fff;
+    border-top: 1px solid var(--navy-15);
+    border-bottom: 1px solid var(--navy-15);
+    padding: 48px 32px;
+}
+
+.outcomes-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+}
+
+.outcome {
+    border-left: 2px solid var(--green);
+    padding-left: 18px;
+}
+
+.outcome .num {
+    font-family: var(--display);
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+.outcome .num .pct {
+    color: var(--green);
+    font-size: 26px;
+    margin-left: 2px;
+    vertical-align: top;
+}
+
+.outcome .num .pct--latam {
+    margin-left: 4px;
+}
+
+.outcome .lab {
+    font-size: 13px;
+    color: var(--navy-75);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* Hero + outcomes responsive (matches prototype @media 960) */
+@media (max-width: 960px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: 44px;
+    }
+
+    .punto-mark {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+    }
+
+    .punto-mark .core {
+        width: 78px;
+        height: 78px;
+        margin: -39px 0 0 -39px;
+    }
+
+    .outcomes-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
