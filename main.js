@@ -155,27 +155,29 @@ function initScrollAnimations() {
 
 /* --- Navigation --- */
 function initNavigation() {
-    const nav = document.getElementById('main-nav');
+    // After R2 the legacy `#main-nav` was replaced by `<nav class="nav">`.
+    // Resolve either so this function stays no-throw across the redesign window.
+    const nav = document.getElementById('main-nav') || document.querySelector('nav.nav');
     const toggle = document.getElementById('nav-toggle');
     const links = document.getElementById('nav-links');
 
-    // Scroll effect
-    let lastScroll = 0;
-    window.addEventListener(
-        'scroll',
-        () => {
-            const scrollY = window.scrollY;
-            if (scrollY > 60) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-            lastScroll = scrollY;
-        },
-        { passive: true }
-    );
+    // Scroll effect (legacy `.scrolled` style — inert until R8 wires the new state)
+    if (nav) {
+        window.addEventListener(
+            'scroll',
+            () => {
+                const scrollY = window.scrollY;
+                if (scrollY > 60) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            },
+            { passive: true }
+        );
+    }
 
-    // Mobile toggle
+    // Legacy mobile burger — replaced in R2; the guard keeps this dead code safe until R9 removes it.
     if (toggle && links) {
         toggle.addEventListener('click', () => {
             toggle.classList.toggle('active');
@@ -201,7 +203,7 @@ function initNavigation() {
             const target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
-                const navHeight = nav.offsetHeight;
+                const navHeight = nav ? nav.offsetHeight : 0;
                 const y = target.getBoundingClientRect().top + window.scrollY - navHeight;
                 window.scrollTo({ top: y, behavior: 'smooth' });
             }
