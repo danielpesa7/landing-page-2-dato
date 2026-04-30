@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
             rel="stylesheet"
         />
         <link rel="icon" type="image/png" href="assets/logo-2dato.png" />
@@ -23,34 +23,55 @@
     </head>
 
     <body>
+        <a class="skip-link" href="#hero">Skip to content</a>
+
         <!-- Animated background particles -->
         <canvas id="particle-canvas"></canvas>
 
         <!-- Navigation -->
-        <nav id="main-nav" class="nav">
-            <div class="nav-container">
-                <a href="#hero" class="nav-logo" id="nav-logo">
-                    <img src="assets/logo-2dato.png" alt="2Dato" class="nav-logo-img" />
+        <nav class="nav" aria-label="Primary">
+            <div class="nav-inner">
+                <a href="#hero" class="wordmark" aria-label="2DATO home">
+                    <span class="two">2</span><span class="dot" aria-hidden="true"></span
+                    ><span class="rest">DATO</span>
                 </a>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
-                    <li><a href="#services" class="nav-link" id="nav-services">Services</a></li>
-                    <li><a href="#team" class="nav-link" id="nav-team">Team</a></li>
-                    <li>
-                        <a href="#contact" class="nav-link nav-link--cta" id="nav-contact"
-                            >Get in Touch</a
+                <div class="nav-links">
+                    <a href="#capabilities" class="nlink" data-i18n="nav.cap">Capabilities</a>
+                    <a href="#approach" class="nlink" data-i18n="nav.app">Approach</a>
+                    <a href="#industries" class="nlink" data-i18n="nav.ind">Industries</a>
+                    <a href="#team" class="nlink" data-i18n="nav.team">Team</a>
+                    <div
+                        class="lang-toggle"
+                        data-lang="en"
+                        id="langToggle"
+                        role="group"
+                        aria-label="Language"
+                    >
+                        <span class="pill" aria-hidden="true"></span>
+                        <button
+                            type="button"
+                            data-set-lang="en"
+                            class="on"
+                            aria-pressed="true"
                         >
-                    </li>
-                </ul>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                            EN
+                        </button>
+                        <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+                    </div>
+                    <a
+                        href="#contact"
+                        class="btn btn-dark nav-cta"
+                        id="nav-cta-contact"
+                        data-i18n="nav.cta"
+                    >
+                        Request a proposal →
+                    </a>
+                </div>
             </div>
         </nav>
 
         <!-- Hero Section -->
+        <!-- R3: preserve id="hero" — used as anchor by skip-link and wordmark in nav (R2). -->
         <section id="hero" class="hero">
             <div class="hero-content">
                 <div class="hero-badge" data-animate="fade-up">
