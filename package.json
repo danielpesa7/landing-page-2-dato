@@ -1,0 +1,24 @@
+{
+  "name": "landing-page-2-dato",
+  "version": "0.0.0",
+  "private": true,
+  "description": "2Dato marketing landing page (vanilla HTML/CSS/JS, deployed via GitHub Pages)",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:html": "html-validate \"*.html\"",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "check": "npm run format:check && npm run lint"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0",
+    "html-validate": "^10.13.1",
+    "prettier": "^3.8.3",
+    "stylelint": "^17.9.1",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
