@@ -3,3 +3,17 @@ node_modules
 .env
 .env.local
 .env.production
+
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
+
+# Design reference / prototype dump — kept locally for visual diff during the
+# W6 Hybrid redesign (see tasks/redesign-plan.md). Excluded from the repo so
+# GitHub Pages cannot serve `landing.html` from inside it. If preserving the
+# reference inside the repo becomes useful, do it in a separate PR that also
+# excludes the directory from the Pages artifact upload — `.nojekyll` alone
+# does not stop Pages from serving the files.
+new_design/
+design-reference/
