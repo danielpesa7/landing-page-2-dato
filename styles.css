@@ -85,32 +85,16 @@ section {
     margin: 0 auto;
 }
 
-/* Wordmark — "2•DATO" rebuilt in type so the punto can scale */
+/* Wordmark — original 2DATO logo image */
 .wordmark {
     display: inline-flex;
     align-items: center;
-    gap: 0;
-    font-family: var(--display);
-    font-weight: 700;
-    letter-spacing: -1px;
 }
 
-.wordmark .two {
-    color: var(--green);
-}
-
-.wordmark .dot {
-    width: 0.32em;
-    height: 0.32em;
-    border-radius: 50%;
-    background: var(--green);
-    margin: 0 0.1em 0 -0.05em;
-    align-self: center;
-    transform: translateY(-0.05em);
-}
-
-.wordmark .rest {
-    color: var(--navy);
+.wordmark img {
+    display: block;
+    height: 36px;
+    width: auto;
 }
 
 /* Buttons */
@@ -255,8 +239,8 @@ section {
     justify-content: space-between;
 }
 
-.nav .wordmark {
-    font-size: 22px;
+.nav .wordmark img {
+    height: 36px;
 }
 
 .nav-links {
@@ -1308,8 +1292,8 @@ section {
     flex-wrap: wrap;
 }
 
-.foot-w6 .foot-brand .wordmark {
-    font-size: 24px;
+.foot-w6 .foot-brand .wordmark img {
+    height: 40px;
 }
 
 .foot-w6 .foot-brand .tag {
