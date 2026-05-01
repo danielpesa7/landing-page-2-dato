@@ -23,6 +23,9 @@
 
     /* Scale */
     --maxw: 1240px;
+
+    /* Navigation */
+    --nav-h: 64px;
 }
 
 /* Reset & base */
@@ -32,7 +35,13 @@
     box-sizing: border-box;
 }
 
-html,
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-h);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -172,6 +181,7 @@ section {
 
 .btn-dark:hover {
     transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(6, 170, 120, 0.25);
 }
 
 /* Eyebrow / section tag */
@@ -547,6 +557,16 @@ section {
    which is louder than the active motion — `animation: none` + `opacity: 0`
    is the cleaner reduced-motion outcome. */
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn-primary:hover,
+    .btn-dark:hover,
+    .ind:hover {
+        transform: none;
+    }
+
     .punto-mark .core,
     .punto-mark .core::after {
         animation: none;
