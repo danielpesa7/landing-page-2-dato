@@ -1,37 +1,11 @@
 /* ===================================================================
    2Dato Landing Page — Main JavaScript
-   Scroll-triggered animations, smooth-scroll offset, anchor navigation
+   Smooth-scroll offset and anchor navigation.
    =================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initScrollAnimations();
     initSmoothScroll();
 });
-
-/* --- Scroll-triggered Animations --- */
-function initScrollAnimations() {
-    const elements = document.querySelectorAll('[data-animate]');
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const delay = parseInt(entry.target.dataset.delay) || 0;
-                    setTimeout(() => {
-                        entry.target.classList.add('in-view');
-                    }, delay);
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.15,
-            rootMargin: '0px 0px -40px 0px',
-        }
-    );
-
-    elements.forEach((el) => observer.observe(el));
-}
 
 /* --- Smooth Scroll Offset + Anchor Navigation --- */
 function initSmoothScroll() {
