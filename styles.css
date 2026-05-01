@@ -4,7 +4,7 @@
     /* Brand palette */
     --navy: #0e1c32;
     --navy-75: #465164;
-    --navy-55: #707d8c;
+    --navy-55: #5e6b7a;
     --navy-35: #a3abb5;
     --navy-15: #d5d9de;
     --green: #06aa78;
@@ -429,7 +429,7 @@ section {
 }
 
 .hero-title .green {
-    color: var(--green);
+    color: var(--green-dark);
 }
 
 .hero-lede {
@@ -1134,7 +1134,7 @@ section {
 
 .tm-role {
     font-size: 12px;
-    color: var(--green);
+    color: var(--green-dark);
     font-family: var(--mono);
     letter-spacing: 0.5px;
     margin: 2px 0 0;
