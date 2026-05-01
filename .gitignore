@@ -4,6 +4,11 @@ node_modules
 .env.local
 .env.production
 
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
+
 # Design reference / prototype dump — kept locally for visual diff during the
 # W6 Hybrid redesign (see tasks/redesign-plan.md). Excluded from the repo so
 # GitHub Pages cannot serve `landing.html` from inside it. If preserving the
