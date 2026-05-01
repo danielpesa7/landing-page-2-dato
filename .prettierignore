@@ -17,3 +17,7 @@ new_design/
 
 # Git
 .git/
+
+# XML and plain-text files (no prettier parser available by default)
+*.xml
+*.txt
