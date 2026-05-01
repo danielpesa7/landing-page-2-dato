@@ -28,7 +28,7 @@ var CATALOG = {
         'hero.title':
             'From a single point<br />of data to <span class="green">decisions<span class="punto"></span></span><br />that <span class="green">run themselves.</span>',
         'hero.lede':
-            '2DATO is a data &amp; AI consultancy for organizations that have outgrown spreadsheets and dashboards. We design the data foundation, deploy the models, and build the agents that run on top — end to end.',
+            '2DATO is a data & AI consultancy for organizations that have outgrown spreadsheets and dashboards. We design the data foundation, deploy the models, and build the agents that run on top — end to end.',
         'hero.see': 'See capabilities',
         'hero.tag': 'Data-Driven · AI-Powered',
 
@@ -36,7 +36,7 @@ var CATALOG = {
         'out.1': 'Faster data retrieval, on average',
         'out.2': 'Reduction in manual processing',
         'out.3': 'Industries served — energy, telecom, CPG',
-        'out.4': 'Engagements across Latin America &amp; beyond',
+        'out.4': 'Engagements across Latin America & beyond',
 
         /* Capabilities */
         'caps.eyebrow': 'What we do',
@@ -49,16 +49,16 @@ var CATALOG = {
         'cap2.t': 'Cloud Architecture',
         'cap2.d':
             'Migration, optimization, and infrastructure-as-code on Azure and AWS. Repeatable, secure, cost-aware.',
-        'cap3.t': 'AI &amp; Machine Learning',
+        'cap3.t': 'AI & Machine Learning',
         'cap3.d':
             'From predictive models to generative AI and autonomous agents — production-grade MLOps, not notebooks.',
-        'cap4.t': 'Analytics &amp; BI',
+        'cap4.t': 'Analytics & BI',
         'cap4.d':
             'Executive dashboards, KPI frameworks, and real-time analytics that drive decisions, not vanity metrics.',
         'cap5.t': 'Data Governance',
         'cap5.d':
             'Quality frameworks, lineage, and security policies. Trustworthy data at every layer — accurate, protected, auditable.',
-        'cap6.t': 'IT Strategy &amp; Consulting',
+        'cap6.t': 'IT Strategy & Consulting',
         'cap6.d':
             'Technology advisory, architecture reviews, and digital transformation roadmaps — pragmatic, business-anchored.',
 
@@ -104,7 +104,7 @@ var CATALOG = {
         'ind.title': 'Where we’ve shipped.',
         'ind.energy': 'Energy',
         'ind.tel': 'Telecom',
-        'ind.cpg': 'CPG &amp; Retail',
+        'ind.cpg': 'CPG & Retail',
         'ind.fin': 'Financial Services',
         'ind.health': 'Healthcare',
         'ind.man': 'Manufacturing',
@@ -156,7 +156,7 @@ var CATALOG = {
         'out.1': 'Más rápida recuperación de datos, en promedio',
         'out.2': 'Reducción en procesamiento manual',
         'out.3': 'Industrias atendidas — energía, telecom, CPG',
-        'out.4': 'Proyectos en Latinoamérica &amp; más allá',
+        'out.4': 'Proyectos en Latinoamérica & más allá',
 
         /* Capabilities */
         'caps.eyebrow': 'Lo que hacemos',
@@ -169,16 +169,16 @@ var CATALOG = {
         'cap2.t': 'Arquitectura Cloud',
         'cap2.d':
             'Migración, optimización e infraestructura como código en Azure y AWS. Repetible, segura, con control de costos.',
-        'cap3.t': 'IA &amp; Machine Learning',
+        'cap3.t': 'IA & Machine Learning',
         'cap3.d':
             'Desde modelos predictivos hasta IA generativa y agentes autónomos — MLOps de grado productivo, no notebooks.',
-        'cap4.t': 'Analytics &amp; BI',
+        'cap4.t': 'Analytics & BI',
         'cap4.d':
             'Dashboards ejecutivos, marcos de KPIs y analítica en tiempo real que impulsan decisiones, no métricas de vanidad.',
         'cap5.t': 'Gobernanza de Datos',
         'cap5.d':
             'Marcos de calidad, linaje y políticas de seguridad. Datos confiables en cada capa — precisos, protegidos, auditables.',
-        'cap6.t': 'Estrategia TI &amp; Consultoría',
+        'cap6.t': 'Estrategia TI & Consultoría',
         'cap6.d':
             'Asesoría tecnológica, revisiones de arquitectura y hojas de ruta de transformación digital — pragmáticas, ancladas al negocio.',
 
@@ -208,7 +208,7 @@ var CATALOG = {
             'Dashboards, agentes y automatizaciones integrados donde ocurre el trabajo real — no en un portal que nadie abre.',
         'step4.w': '2–4 sem',
         'step5.n': '05 / ENTREGA',
-        'step5.t': 'Dejájate más fuerte que como te encontramos.',
+        'step5.t': 'Déjate más fuerte que como te encontramos.',
         'step5.d':
             'Documentación, runbooks y habilitación del equipo. Soporte continuo opcional — pero nunca estarás atado.',
         'step5.w': 'continuo',
@@ -224,7 +224,7 @@ var CATALOG = {
         'ind.title': 'Dónde hemos entregado.',
         'ind.energy': 'Energía',
         'ind.tel': 'Telecomunicaciones',
-        'ind.cpg': 'CPG &amp; Retail',
+        'ind.cpg': 'CPG & Retail',
         'ind.fin': 'Servicios Financieros',
         'ind.health': 'Salud',
         'ind.man': 'Manufactura',
@@ -261,7 +261,8 @@ var CATALOG = {
    Attribute keys handled inline via data-i18n-attr (reserved for
    future use; not present in current markup).
    ------------------------------------------------------------------ */
-function applyLang(lang) {
+function applyLang(lang, opts) {
+    var announce = opts && opts.announce !== undefined ? opts.announce : true;
     var dict = CATALOG[lang];
     if (!dict) return;
 
@@ -307,10 +308,12 @@ function applyLang(lang) {
         toggle.setAttribute('data-lang', lang);
     }
 
-    /* Announce language change to screen readers */
-    var status = document.getElementById('lang-status');
-    if (status) {
-        status.textContent = lang === 'es' ? 'Idioma: Español' : 'Language: English';
+    /* Announce language change to screen readers — skip on boot to avoid spurious SR chatter */
+    if (announce) {
+        var status = document.getElementById('lang-status');
+        if (status) {
+            status.textContent = lang === 'es' ? 'Idioma: Español' : 'Language: English';
+        }
     }
 }
 
@@ -363,7 +366,8 @@ function setLang(lang) {
    ------------------------------------------------------------------ */
 function initI18n() {
     var initialLang = detectLang();
-    applyLang(initialLang);
+    // TODO: FOUC — pre-script in <head> would prevent EN→ES flash on initial load
+    applyLang(initialLang, { announce: false });
 
     /* Wire toggle buttons */
     var buttons = document.querySelectorAll('[data-set-lang]');
