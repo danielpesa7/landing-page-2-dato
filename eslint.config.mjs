@@ -15,6 +15,26 @@ export default [
         },
     },
     {
-        ignores: ['assets/**', 'node_modules/**', 'tasks/**', 'new_design/**'],
+        files: ['scripts/**/*.mjs'],
+        languageOptions: {
+            ecmaVersion: 2024,
+            sourceType: 'module',
+            globals: { ...globals.node },
+        },
+        rules: {
+            'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+        },
+    },
+    {
+        ignores: [
+            'assets/**',
+            'node_modules/**',
+            'tasks/**',
+            'new_design/**',
+            'tests/**',
+            'playwright-report/**',
+            'test-results/**',
+            'playwright.config.ts',
+        ],
     },
 ];

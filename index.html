@@ -3,823 +3,782 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>2Dato — IT & AI Solutions | Colombia & Beyond</title>
+        <title>2DATO — Data & AI Consulting | Bogotá, Colombia</title>
         <meta
             name="description"
-            content="2Dato delivers cutting-edge IT and AI services from Colombia to the world. We build scalable data platforms, intelligent automation, and enterprise-grade solutions."
+            content="2DATO is a data & AI consultancy for organizations that have outgrown spreadsheets. We design data foundations, deploy ML models, and build autonomous agents — end to end. Based in Bogotá, serving LATAM and beyond."
         />
+        <meta name="theme-color" content="#0e1c32" />
+        <link rel="canonical" href="https://www.2dato.co/" />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.2dato.co/" />
+        <meta property="og:title" content="2DATO — Data & AI Consulting | Bogotá, Colombia" />
         <meta
-            name="keywords"
-            content="IT services, AI solutions, data engineering, Colombia, cloud platforms, machine learning"
+            property="og:description"
+            content="Data foundations, ML models, and autonomous agents — end to end. 2DATO is the data & AI consultancy for organizations ready to move beyond spreadsheets."
         />
+        <meta property="og:image" content="https://www.2dato.co/assets/og.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="es_CO" />
+        <meta property="og:site_name" content="2DATO" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="2DATO — Data & AI Consulting | Bogotá, Colombia" />
+        <meta
+            name="twitter:description"
+            content="Data foundations, ML models, and autonomous agents — end to end. 2DATO is the data & AI consultancy for organizations ready to move beyond spreadsheets."
+        />
+        <meta name="twitter:image" content="https://www.2dato.co/assets/og.png" />
+
+        <!-- JSON-LD structured data: Organization -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "2DATO",
+                "alternateName": "2Dato",
+                "url": "https://www.2dato.co/",
+                "logo": "https://www.2dato.co/assets/logo-2dato.png",
+                "description": "Data & AI consultancy specialising in data engineering, cloud architecture, machine learning, and autonomous agents. Based in Bogotá, serving Latin America and beyond.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bogotá",
+                    "addressRegion": "Cundinamarca",
+                    "addressCountry": "CO"
+                },
+                "areaServed": ["CO", "LATAM", "Worldwide"],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "hello@2dato.com",
+                    "contactType": "customer service",
+                    "availableLanguage": ["English", "Spanish"]
+                },
+                "sameAs": ["https://www.2dato.co/"]
+            }
+        </script>
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
             rel="stylesheet"
         />
         <link rel="icon" type="image/png" href="assets/logo-2dato.png" />
+        <link rel="alternate" hreflang="en" href="https://www.2dato.co/?lang=en" />
+        <link rel="alternate" hreflang="es" href="https://www.2dato.co/?lang=es" />
+        <link rel="alternate" hreflang="x-default" href="https://www.2dato.co/" />
         <link rel="stylesheet" href="styles.css" />
     </head>
 
     <body>
-        <!-- Animated background particles -->
-        <canvas id="particle-canvas"></canvas>
+        <a class="skip-link" href="#hero">Skip to content</a>
 
         <!-- Navigation -->
-        <nav id="main-nav" class="nav">
-            <div class="nav-container">
-                <a href="#hero" class="nav-logo" id="nav-logo">
-                    <img src="assets/logo-2dato.png" alt="2Dato" class="nav-logo-img" />
+        <nav class="nav" aria-label="Primary">
+            <div class="nav-inner">
+                <a href="#hero" class="wordmark" aria-label="2DATO home">
+                    <span class="two">2</span><span class="dot" aria-hidden="true"></span
+                    ><span class="rest">DATO</span>
                 </a>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
-                    <li><a href="#services" class="nav-link" id="nav-services">Services</a></li>
-                    <li><a href="#team" class="nav-link" id="nav-team">Team</a></li>
-                    <li>
-                        <a href="#contact" class="nav-link nav-link--cta" id="nav-contact"
-                            >Get in Touch</a
-                        >
-                    </li>
-                </ul>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="nav-links">
+                    <a href="#capabilities" class="nlink" data-i18n="nav.cap">Capabilities</a>
+                    <a href="#approach" class="nlink" data-i18n="nav.app">Approach</a>
+                    <a href="#industries" class="nlink" data-i18n="nav.ind">Industries</a>
+                    <a href="#team" class="nlink" data-i18n="nav.team">Team</a>
+                    <div
+                        class="lang-toggle"
+                        data-lang="en"
+                        id="langToggle"
+                        role="group"
+                        aria-label="Language"
+                    >
+                        <span class="pill" aria-hidden="true"></span>
+                        <button type="button" data-set-lang="en" class="on" aria-pressed="true">
+                            EN
+                        </button>
+                        <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+                    </div>
+                    <span
+                        id="lang-status"
+                        class="sr-only"
+                        aria-live="polite"
+                        aria-atomic="true"
+                    ></span>
+                    <a
+                        href="#contact"
+                        class="btn btn-dark nav-cta"
+                        id="nav-cta-contact"
+                        data-i18n="nav.cta"
+                    >
+                        Request a proposal →
+                    </a>
+                </div>
             </div>
         </nav>
 
         <!-- Hero Section -->
+        <!-- id="hero" preserved as anchor target for skip-link and wordmark (R2). -->
         <section id="hero" class="hero">
-            <div class="hero-content">
-                <div class="hero-badge" data-animate="fade-up">
-                    <span class="badge-dot"></span>
-                    IT & AI Solutions from Colombia to the World
+            <div class="hero-inner">
+                <div class="punto-mark">
+                    <div class="punto-mark-graphic" aria-hidden="true">
+                        <div class="ring r1"></div>
+                        <div class="ring r2"></div>
+                        <div class="ring r3"></div>
+                        <div class="core"></div>
+                    </div>
+                    <div class="label" data-i18n="hero.mark">El Punto · The mark</div>
                 </div>
-                <h1 class="hero-title" data-animate="fade-up" data-delay="100">
-                    We turn <span class="text-gradient">data</span> into <br />your greatest asset
-                </h1>
-                <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
-                    Enterprise-grade data engineering, cloud architecture, and artificial
-                    intelligence solutions designed to accelerate your digital transformation.
-                </p>
-                <div class="hero-actions" data-animate="fade-up" data-delay="300">
-                    <a href="#services" class="btn btn-primary" id="hero-cta-services">
-                        Explore Services
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path
-                                d="M3 8h10M9 4l4 4-4 4"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
-                    </a>
-                    <a href="#team" class="btn btn-ghost" id="hero-cta-team">Meet the Team</a>
-                </div>
-                <div class="hero-stats" data-animate="fade-up" data-delay="400">
-                    <div class="stat">
-                        <span class="stat-number" data-count="50">0</span
-                        ><span class="stat-suffix">+</span>
-                        <span class="stat-label">Projects Delivered</span>
+                <div>
+                    <div class="eyebrow hero-eyebrow" data-i18n="hero.eyebrow">
+                        2DATO · Bogotá → Worldwide
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number" data-count="5">0</span
-                        ><span class="stat-suffix">+</span>
-                        <span class="stat-label">Years Experience</span>
+                    <h1 class="hero-title" data-i18n-html="hero.title">
+                        From a single point<br />of data to
+                        <span class="green">decisions<span class="punto"></span></span><br />that
+                        <span class="green">run themselves.</span>
+                    </h1>
+                    <p class="hero-lede" data-i18n="hero.lede">
+                        2DATO is a data &amp; AI consultancy for organizations that have outgrown
+                        spreadsheets and dashboards. We design the data foundation, deploy the
+                        models, and build the agents that run on top — end to end.
+                    </p>
+                    <div class="hero-actions">
+                        <a
+                            href="#contact"
+                            class="btn btn-primary"
+                            id="hero-cta-contact"
+                            data-i18n="nav.cta"
+                        >
+                            Request a proposal →
+                        </a>
+                        <a
+                            href="#capabilities"
+                            class="btn btn-ghost"
+                            id="hero-cta-capabilities"
+                            data-i18n="hero.see"
+                        >
+                            See capabilities
+                        </a>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number" data-count="3">0</span>
-                        <span class="stat-label">Expert Engineers</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual" data-animate="fade-left" data-delay="200">
-                <div class="hero-glow"></div>
-                <div class="code-window">
-                    <div class="code-header">
-                        <span class="code-dot code-dot--red"></span>
-                        <span class="code-dot code-dot--yellow"></span>
-                        <span class="code-dot code-dot--green"></span>
-                        <span class="code-title">pipeline.py</span>
-                    </div>
-                    <pre
-                        class="code-body"
-                    ><code><span class="code-keyword">from</span> <span class="code-module">twodato</span> <span class="code-keyword">import</span> Pipeline
-
-<span class="code-keyword">class</span> <span class="code-class">DataTransform</span>(Pipeline):
-    <span class="code-keyword">def</span> <span class="code-function">execute</span>(self, data):
-        <span class="code-comment"># Transform raw data into insights</span>
-        cleaned = self.<span class="code-function">clean</span>(data)
-        enriched = self.<span class="code-function">enrich</span>(cleaned)
-        <span class="code-keyword">return</span> self.<span class="code-function">deploy</span>(enriched)
-
-pipeline = DataTransform()
-result = pipeline.<span class="code-function">run</span>()
-<span class="code-comment"># ✓ Pipeline deployed successfully</span>
-<span class="code-cursor">|</span></code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="section-container">
-                <div class="section-header" data-animate="fade-up">
-                    <span class="section-tag">Who We Are</span>
-                    <h2 class="section-title">
-                        Built on data.<br />Driven by <span class="text-gradient">innovation</span>.
-                    </h2>
-                </div>
-                <div class="about-grid">
-                    <div class="about-card" data-animate="fade-up" data-delay="100">
-                        <div class="about-card-icon">
-                            <svg
-                                width="32"
-                                height="32"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 16v-4M12 8h.01" />
-                            </svg>
-                        </div>
-                        <h3>Our Mission</h3>
-                        <p>
-                            We empower businesses across Latin America and the world with
-                            enterprise-grade IT and AI solutions. From data pipelines to intelligent
-                            automation, we bridge the gap between raw data and real business value.
-                        </p>
-                    </div>
-                    <div class="about-card" data-animate="fade-up" data-delay="200">
-                        <div class="about-card-icon">
-                            <svg
-                                width="32"
-                                height="32"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                                <polyline points="2 17 12 22 22 17" />
-                                <polyline points="2 12 12 17 22 12" />
-                            </svg>
-                        </div>
-                        <h3>Our Approach</h3>
-                        <p>
-                            We believe in clean architecture, scalable systems, and data-driven
-                            decisions. Every solution we build is designed to grow with your
-                            business, leveraging cutting-edge cloud platforms and modern engineering
-                            practices.
-                        </p>
-                    </div>
-                    <div class="about-card" data-animate="fade-up" data-delay="300">
-                        <div class="about-card-icon">
-                            <svg
-                                width="32"
-                                height="32"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                                />
-                            </svg>
-                        </div>
-                        <h3>Global Reach</h3>
-                        <p>
-                            Based in Colombia with a global mindset. We deliver solutions for
-                            clients worldwide, combining Latin American talent with world-class
-                            engineering standards and round-the-clock commitment to excellence.
-                        </p>
+                    <div class="hero-trust">
+                        <span data-i18n="hero.tag">Data-Driven · AI-Powered</span>
+                        <span class="sep" aria-hidden="true"></span>
+                        <span>Azure · AWS · Snowflake · Databricks</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="services">
-            <div class="section-container">
-                <div class="section-header" data-animate="fade-up">
-                    <span class="section-tag">What We Do</span>
-                    <h2 class="section-title">
-                        Services built for the <span class="text-gradient">future</span>
-                    </h2>
-                    <p class="section-desc">
-                        End-to-end solutions covering every stage of your data and technology
-                        journey.
+        <!-- Outcomes strip -->
+        <!-- TODO(redesign-plan Res #3): replace placeholder figures (40%, 60%, 3,
+             LATAM+) with verified outcomes before the redesign branch merges to main. -->
+        <section class="outcomes" aria-label="Key outcomes">
+            <div class="outcomes-inner">
+                <div class="outcome">
+                    <div class="num">40<span class="pct">%</span></div>
+                    <div class="lab" data-i18n="out.1">Faster data retrieval, on average</div>
+                </div>
+                <div class="outcome">
+                    <div class="num">60<span class="pct">%</span></div>
+                    <div class="lab" data-i18n="out.2">Reduction in manual processing</div>
+                </div>
+                <div class="outcome">
+                    <div class="num">3</div>
+                    <div class="lab" data-i18n="out.3">
+                        Industries served — energy, telecom, CPG
+                    </div>
+                </div>
+                <div class="outcome">
+                    <div class="num">LATAM<span class="pct pct--latam">+</span></div>
+                    <div class="lab" data-i18n="out.4">
+                        Engagements across Latin America &amp; beyond
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities -->
+        <section id="capabilities" class="caps grid-bg">
+            <div class="container">
+                <div class="caps-head">
+                    <div>
+                        <span class="eyebrow" data-i18n="caps.eyebrow">What we do</span>
+                        <h2 class="caps-title" data-i18n-html="caps.title">
+                            Six capabilities,<br />one
+                            <span class="green">accountable</span> partner.
+                        </h2>
+                    </div>
+                    <p class="pitch" data-i18n="caps.pitch">
+                        Most consultancies hand you a deck. We hand you a working system. From data
+                        ingestion to autonomous agents, we own the full stack — so insights become
+                        outcomes, not slides.
                     </p>
                 </div>
-                <div class="services-grid">
-                    <div
-                        class="service-card"
-                        data-animate="fade-up"
-                        data-delay="100"
-                        id="service-data-eng"
-                    >
-                        <div class="service-icon">
-                            <svg
-                                width="28"
-                                height="28"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <ellipse cx="12" cy="5" rx="9" ry="3" />
-                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-                            </svg>
+
+                <div class="caps-grid">
+                    <article class="cap">
+                        <div class="cap-head">
+                            <span class="cap-num" aria-hidden="true">01</span>
+                            <div class="cap-icon" aria-hidden="true">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                >
+                                    <ellipse cx="12" cy="5" rx="8" ry="3" />
+                                    <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+                                    <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3>Data Engineering</h3>
-                        <p>
-                            Scalable data pipelines, ETL/ELT processes, and modern lakehouse
-                            architectures using Spark, Databricks, Snowflake, and Airflow.
+                        <h3 data-i18n="cap1.t">Data Engineering</h3>
+                        <p data-i18n="cap1.d">
+                            Modern lakehouse architectures, ETL/ELT pipelines, and real-time
+                            streaming — the foundation everything else stands on.
                         </p>
-                        <ul class="service-tags">
-                            <li>ETL/ELT</li>
-                            <li>Data Lakes</li>
-                            <li>Pipelines</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="service-card"
-                        data-animate="fade-up"
-                        data-delay="150"
-                        id="service-cloud"
-                    >
-                        <div class="service-icon">
-                            <svg
-                                width="28"
-                                height="28"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-                            </svg>
+                        <div class="cap-stack">
+                            <span>Spark</span><span>Databricks</span><span>Snowflake</span
+                            ><span>Airflow</span>
                         </div>
-                        <h3>Cloud Architecture</h3>
-                        <p>
-                            Design, migration, and optimization of cloud infrastructure on Azure and
-                            AWS. Infrastructure as Code with Terraform for repeatable deployments.
-                        </p>
-                        <ul class="service-tags">
-                            <li>Azure</li>
-                            <li>AWS</li>
-                            <li>Terraform</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="service-card"
-                        data-animate="fade-up"
-                        data-delay="200"
-                        id="service-ai"
-                    >
-                        <div class="service-icon">
-                            <svg
-                                width="28"
-                                height="28"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path
-                                    d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.57-3.25 3.93a1 1 0 0 0-.75.97V13"
-                                />
-                                <path d="M12 13a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
-                                <path d="M12 17v2" />
-                                <path d="M8 21h8" />
-                                <path d="M6 6a6 6 0 0 0 2.18 4.6" />
-                                <path d="M18 6a6 6 0 0 1-2.18 4.6" />
-                            </svg>
+                    </article>
+
+                    <article class="cap">
+                        <div class="cap-head">
+                            <span class="cap-num" aria-hidden="true">02</span>
+                            <div class="cap-icon" aria-hidden="true">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3>AI & Machine Learning</h3>
-                        <p>
-                            MLOps pipelines, model deployment, and intelligent automation. From
-                            predictive analytics to generative AI integration for your business.
+                        <h3 data-i18n="cap2.t">Cloud Architecture</h3>
+                        <p data-i18n="cap2.d">
+                            Migration, optimization, and infrastructure-as-code on Azure and AWS.
+                            Repeatable, secure, cost-aware.
                         </p>
-                        <ul class="service-tags">
-                            <li>MLOps</li>
-                            <li>GenAI</li>
-                            <li>NLP</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="service-card"
-                        data-animate="fade-up"
-                        data-delay="250"
-                        id="service-bi"
-                    >
-                        <div class="service-icon">
-                            <svg
-                                width="28"
-                                height="28"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <line x1="18" y1="20" x2="18" y2="10" />
-                                <line x1="12" y1="20" x2="12" y2="4" />
-                                <line x1="6" y1="20" x2="6" y2="14" />
-                            </svg>
+                        <div class="cap-stack">
+                            <span>Azure</span><span>AWS</span><span>Terraform</span><span>K8s</span>
                         </div>
-                        <h3>Analytics & BI</h3>
-                        <p>
-                            Advanced dashboards, real-time analytics, and business intelligence
-                            solutions using Power BI, Tableau, and custom visualization tools.
-                        </p>
-                        <ul class="service-tags">
-                            <li>Power BI</li>
-                            <li>Dashboards</li>
-                            <li>KPIs</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="service-card"
-                        data-animate="fade-up"
-                        data-delay="300"
-                        id="service-governance"
-                    >
-                        <div class="service-icon">
-                            <svg
-                                width="28"
-                                height="28"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
+                    </article>
+
+                    <article class="cap">
+                        <div class="cap-head">
+                            <span class="cap-num" aria-hidden="true">03</span>
+                            <div class="cap-icon" aria-hidden="true">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M12 2a4 4 0 0 1 4 4c0 2-1.5 3.6-3.5 4V13" />
+                                    <circle cx="12" cy="16" r="2" />
+                                    <path d="M12 18v2M8 21h8" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3>Data Governance</h3>
-                        <p>
-                            Data quality frameworks, security policies, and compliance standards.
-                            Ensuring your data is accurate, protected, and trustworthy at every
-                            layer.
+                        <h3 data-i18n="cap3.t">AI &amp; Machine Learning</h3>
+                        <p data-i18n="cap3.d">
+                            From predictive models to generative AI and autonomous agents —
+                            production-grade MLOps, not notebooks.
                         </p>
-                        <ul class="service-tags">
-                            <li>Quality</li>
-                            <li>Security</li>
-                            <li>Compliance</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="service-card"
-                        data-animate="fade-up"
-                        data-delay="350"
-                        id="service-consulting"
-                    >
-                        <div class="service-icon">
-                            <svg
-                                width="28"
-                                height="28"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
+                        <div class="cap-stack">
+                            <span>MLOps</span><span>GenAI</span><span>RAG</span><span>Agents</span>
                         </div>
-                        <h3>IT Consulting</h3>
-                        <p>
-                            Strategic technology advisory, system architecture reviews, and digital
-                            transformation roadmaps tailored to your business objectives.
+                    </article>
+
+                    <article class="cap">
+                        <div class="cap-head">
+                            <span class="cap-num" aria-hidden="true">04</span>
+                            <div class="cap-icon" aria-hidden="true">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                >
+                                    <line x1="6" y1="20" x2="6" y2="14" />
+                                    <line x1="12" y1="20" x2="12" y2="4" />
+                                    <line x1="18" y1="20" x2="18" y2="10" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n="cap4.t">Analytics &amp; BI</h3>
+                        <p data-i18n="cap4.d">
+                            Executive dashboards, KPI frameworks, and real-time analytics that drive
+                            decisions, not vanity metrics.
                         </p>
-                        <ul class="service-tags">
-                            <li>Strategy</li>
-                            <li>Architecture</li>
-                            <li>Digital</li>
-                        </ul>
-                    </div>
+                        <div class="cap-stack">
+                            <span>Power BI</span><span>Tableau</span><span>Looker</span>
+                        </div>
+                    </article>
+
+                    <article class="cap">
+                        <div class="cap-head">
+                            <span class="cap-num" aria-hidden="true">05</span>
+                            <div class="cap-icon" aria-hidden="true">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n="cap5.t">Data Governance</h3>
+                        <p data-i18n="cap5.d">
+                            Quality frameworks, lineage, and security policies. Trustworthy data at
+                            every layer — accurate, protected, auditable.
+                        </p>
+                        <div class="cap-stack">
+                            <span>Lineage</span><span>Quality</span><span>Compliance</span>
+                        </div>
+                    </article>
+
+                    <article class="cap">
+                        <div class="cap-head">
+                            <span class="cap-num" aria-hidden="true">06</span>
+                            <div class="cap-icon" aria-hidden="true">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 data-i18n="cap6.t">IT Strategy &amp; Consulting</h3>
+                        <p data-i18n="cap6.d">
+                            Technology advisory, architecture reviews, and digital transformation
+                            roadmaps — pragmatic, business-anchored.
+                        </p>
+                        <div class="cap-stack">
+                            <span>Strategy</span><span>Roadmap</span><span>Audit</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Team Section -->
-        <section id="team" class="team">
-            <div class="section-container">
-                <div class="section-header" data-animate="fade-up">
-                    <span class="section-tag">Our People</span>
-                    <h2 class="section-title">Meet the <span class="text-gradient">team</span></h2>
-                    <p class="section-desc">
-                        A hand-picked group of engineers and innovators passionate about building
-                        exceptional technology.
+        <!-- Approach -->
+        <section id="approach" class="approach">
+            <div class="container approach-container">
+                <div class="approach-intro">
+                    <span class="eyebrow" data-i18n="app.eyebrow">How we work</span>
+                    <h2 class="approach-title" data-i18n-html="app.title">
+                        A method, not<br />a <span class="green">moonshot</span>.
+                    </h2>
+                    <p class="pitch" data-i18n="app.pitch">
+                        Six weeks to first measurable impact. We move in tight, scoped sprints —
+                        every phase ends with something running in your environment.
+                    </p>
+                </div>
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-num" data-i18n="step1.n">01 / DISCOVERY</div>
+                        <div class="step-body">
+                            <h3 class="step-title" data-i18n="step1.t">
+                                Diagnose the data, not the symptoms.
+                            </h3>
+                            <p data-i18n="step1.d">
+                                Two-week deep dive into your data landscape, decision flows, and
+                                biggest blockers. You leave with a prioritized roadmap — keep it
+                                whether you continue with us or not.
+                            </p>
+                        </div>
+                        <div class="when" data-i18n="step1.w">~ 2 wks</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num" data-i18n="step2.n">02 / FOUNDATION</div>
+                        <div class="step-body">
+                            <h3 class="step-title" data-i18n="step2.t">Build the spine.</h3>
+                            <p data-i18n="step2.d">
+                                Lakehouse, pipelines, governance. The unsexy infrastructure every AI
+                                initiative needs but most companies skip. Done right, once.
+                            </p>
+                        </div>
+                        <div class="when" data-i18n="step2.w">4–8 wks</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num" data-i18n="step3.n">03 / INTELLIGENCE</div>
+                        <div class="step-body">
+                            <h3 class="step-title" data-i18n="step3.t">
+                                Deploy models that earn their keep.
+                            </h3>
+                            <p data-i18n="step3.d">
+                                Predictive, generative, or agentic — chosen by business case, not
+                                hype. Each model ships with monitoring, retraining, and a clear ROI
+                                hypothesis.
+                            </p>
+                        </div>
+                        <div class="when" data-i18n="step3.w">3–6 wks</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num" data-i18n="step4.n">04 / ACTIVATION</div>
+                        <div class="step-body">
+                            <h3 class="step-title" data-i18n="step4.t">
+                                Wire it into the business.
+                            </h3>
+                            <p data-i18n="step4.d">
+                                Dashboards, agents, and automations integrated where work actually
+                                happens — not in a portal nobody opens.
+                            </p>
+                        </div>
+                        <div class="when" data-i18n="step4.w">2–4 wks</div>
+                    </li>
+                    <li class="step">
+                        <div class="step-num" data-i18n="step5.n">05 / HANDOFF</div>
+                        <div class="step-body">
+                            <h3 class="step-title" data-i18n="step5.t">
+                                Leave you stronger than we found you.
+                            </h3>
+                            <p data-i18n="step5.d">
+                                Documentation, runbooks, and team enablement. Optional ongoing
+                                support — but you're never locked in.
+                            </p>
+                        </div>
+                        <div class="when" data-i18n="step5.w">ongoing</div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Promise -->
+        <section class="promise" aria-labelledby="promise-eyebrow">
+            <div class="promise-inner">
+                <span id="promise-eyebrow" class="eyebrow" data-i18n="promise.eyebrow"
+                    >Our promise</span
+                >
+                <blockquote data-i18n-html="promise.quote">
+                    &ldquo;Every organization holds <span class="green">hidden potential</span> in
+                    its data<span class="punto" aria-hidden="true"></span> waiting to be
+                    discovered.&rdquo;
+                </blockquote>
+                <div class="attribution" data-i18n="promise.attr">— 2DATO · Brand Manifesto</div>
+            </div>
+        </section>
+
+        <!-- Industries -->
+        <section id="industries" class="inds">
+            <div class="container">
+                <div class="inds-head">
+                    <span class="eyebrow" data-i18n="ind.eyebrow">Industries</span>
+                    <h2 class="inds-title" data-i18n="ind.title">Where we&rsquo;ve shipped.</h2>
+                </div>
+                <ul class="inds-grid">
+                    <li class="ind">
+                        <svg
+                            class="ind-icon"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            aria-hidden="true"
+                        >
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                        <div class="name" data-i18n="ind.energy">Energy</div>
+                    </li>
+                    <li class="ind">
+                        <svg
+                            class="ind-icon"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M5 12.55a11 11 0 0 1 14 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.94 0M12 20h.01"
+                            />
+                        </svg>
+                        <div class="name" data-i18n="ind.tel">Telecom</div>
+                    </li>
+                    <li class="ind">
+                        <svg
+                            class="ind-icon"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"
+                            />
+                        </svg>
+                        <div class="name" data-i18n="ind.cpg">CPG &amp; Retail</div>
+                    </li>
+                    <li class="ind">
+                        <svg
+                            class="ind-icon"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            aria-hidden="true"
+                        >
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                        <div class="name" data-i18n="ind.fin">Financial Services</div>
+                    </li>
+                    <li class="ind">
+                        <svg
+                            class="ind-icon"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"
+                            />
+                        </svg>
+                        <div class="name" data-i18n="ind.health">Healthcare</div>
+                    </li>
+                    <li class="ind">
+                        <svg
+                            class="ind-icon"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            aria-hidden="true"
+                        >
+                            <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4" />
+                        </svg>
+                        <div class="name" data-i18n="ind.man">Manufacturing</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section id="team" class="team-w6">
+            <div class="container">
+                <div class="team-head">
+                    <div>
+                        <span class="eyebrow" data-i18n="team.eyebrow">The team</span>
+                        <h2 class="team-title" data-i18n="team.title">Senior engineers.</h2>
+                    </div>
+                    <p class="tagline" data-i18n="team.tag">
+                        A small, hand-picked team. Every project led directly by the people who
+                        built 2DATO.
                     </p>
                 </div>
                 <div class="team-grid">
-                    <!-- Daniel Perico -->
-                    <div
-                        class="team-card team-card--featured"
-                        data-animate="fade-up"
-                        data-delay="100"
-                        id="team-daniel"
-                    >
-                        <div class="team-card-inner">
-                            <div class="team-card-front">
-                                <div class="team-avatar">
-                                    <img
-                                        src="assets/daniel-perico.jpg"
-                                        alt="Daniel Perico"
-                                        class="team-avatar-img"
-                                    />
-                                    <div class="team-avatar-ring"></div>
-                                </div>
-                                <h3 class="team-name">Daniel Perico</h3>
-                                <p class="team-role">Data Architect & Senior Data Engineer</p>
-                                <p class="team-bio">
-                                    Industrial Engineer turned Data Engineer with 5+ years
-                                    transforming data into business value through scalable
-                                    engineering solutions. Expert in cloud architecture, big data
-                                    pipelines, and ML platforms.
-                                </p>
-                                <div class="team-skills">
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag">Azure</span>
-                                    <span class="skill-tag">Snowflake</span>
-                                    <span class="skill-tag">Databricks</span>
-                                    <span class="skill-tag">Spark</span>
-                                    <span class="skill-tag">Terraform</span>
-                                </div>
-                                <div class="team-certs">
-                                    <span
-                                        class="cert-badge"
-                                        title="Microsoft Fabric Data Engineer Associate"
-                                        >DP-700</span
-                                    >
-                                    <span class="cert-badge" title="Azure Data Engineer Associate"
-                                        >Azure DE</span
-                                    >
-                                    <span
-                                        class="cert-badge"
-                                        title="Data Science for All - Correlation One"
-                                        >DS4A</span
-                                    >
-                                </div>
-                                <div class="team-highlights">
-                                    <div class="highlight">
-                                        <span class="highlight-number">40%</span>
-                                        <span class="highlight-label">Faster data retrieval</span>
-                                    </div>
-                                    <div class="highlight">
-                                        <span class="highlight-number">60%</span>
-                                        <span class="highlight-label">Processing speed gain</span>
-                                    </div>
-                                </div>
-                                <div class="team-links">
-                                    <a
-                                        href="https://www.linkedin.com/in/danielpesa7"
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="team-social"
-                                        title="LinkedIn"
-                                        id="daniel-linkedin"
-                                    >
-                                        <svg
-                                            width="18"
-                                            height="18"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-                                            />
-                                        </svg>
-                                    </a>
-                                    <a
-                                        href="https://github.com/danielpesa7"
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="team-social"
-                                        title="GitHub"
-                                        id="daniel-github"
-                                    >
-                                        <svg
-                                            width="18"
-                                            height="18"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                                            />
-                                        </svg>
-                                    </a>
-                                    <a
-                                        href="https://www.danielperico.com"
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="team-social"
-                                        title="Website"
-                                        id="daniel-website"
-                                    >
-                                        <svg
-                                            width="18"
-                                            height="18"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <circle cx="12" cy="12" r="10" />
-                                            <line x1="2" y1="12" x2="22" y2="12" />
-                                            <path
-                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                                            />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
+                    <article class="tm">
+                        <div class="tm-avatar">
+                            <picture>
+                                <source srcset="assets/daniel-perico.webp" type="image/webp" />
+                                <img
+                                    src="assets/daniel-perico.jpg"
+                                    alt="Daniel Perico"
+                                    width="400"
+                                    height="400"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
-                    </div>
-
-                    <!-- Tomas Cardenas -->
-                    <div
-                        class="team-card team-card--featured"
-                        data-animate="fade-up"
-                        data-delay="200"
-                        id="team-tomas"
-                    >
-                        <div class="team-card-inner">
-                            <div class="team-card-front">
-                                <div class="team-avatar">
-                                    <img
-                                        src="assets/tomas-cardenas.jpg"
-                                        alt="Tomas Cardenas"
-                                        class="team-avatar-img"
-                                    />
-                                    <div class="team-avatar-ring"></div>
-                                </div>
-                                <h3 class="team-name">Tomas Cardenas</h3>
-                                <p class="team-role">Data Scientist & Demand Planner</p>
-                                <p class="team-bio">
-                                    Business Administration & Applied Analytics specialist with deep
-                                    expertise in sales forecasting, supply chain analytics, and
-                                    machine learning. Currently leading data-driven sales
-                                    projections across Latin America at Kimberly-Clark.
-                                </p>
-                                <div class="team-skills">
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag">SQL</span>
-                                    <span class="skill-tag">Tableau</span>
-                                    <span class="skill-tag">Power BI</span>
-                                    <span class="skill-tag">Machine Learning</span>
-                                    <span class="skill-tag">Supply Chain</span>
-                                </div>
-                                <div class="team-certs">
-                                    <span
-                                        class="cert-badge"
-                                        title="Advanced Data Analytics Specialization - Google"
-                                        >Google Analytics</span
-                                    >
-                                    <span
-                                        class="cert-badge"
-                                        title="Supply Chain Data Analyst - Unilever"
-                                        >Unilever SC</span
-                                    >
-                                    <span class="cert-badge" title="Data Scientist - Platzi"
-                                        >Data Scientist</span
-                                    >
-                                </div>
-                                <div class="team-highlights">
-                                    <div class="highlight">
-                                        <span class="highlight-number">LATAM</span>
-                                        <span class="highlight-label">Sales projection scope</span>
-                                    </div>
-                                    <div class="highlight">
-                                        <span class="highlight-number">MSc</span>
-                                        <span class="highlight-label">Applied Analytics</span>
-                                    </div>
-                                </div>
-                                <div class="team-links">
-                                    <a
-                                        href="https://www.linkedin.com/in/tomcardelo96"
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="team-social"
-                                        title="LinkedIn"
-                                        id="tomas-linkedin"
-                                    >
-                                        <svg
-                                            width="18"
-                                            height="18"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-                                            />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
+                        <div>
+                            <h3 class="tm-name">Daniel Perico</h3>
+                            <p class="tm-role" data-i18n="team.r1">Data Architect</p>
+                            <p class="tm-skills">
+                                Azure · Snowflake · Databricks · Terraform · Spark
+                            </p>
                         </div>
-                    </div>
-
-                    <!-- David Camilo Ardila -->
-                    <div
-                        class="team-card team-card--featured"
-                        data-animate="fade-up"
-                        data-delay="300"
-                        id="team-david"
-                    >
-                        <div class="team-card-inner">
-                            <div class="team-card-front">
-                                <div class="team-avatar">
-                                    <img
-                                        src="assets/david-ardila.jpg"
-                                        alt="David Camilo Ardila"
-                                        class="team-avatar-img"
-                                    />
-                                    <div class="team-avatar-ring"></div>
-                                </div>
-                                <h3 class="team-name">David Camilo Ardila</h3>
-                                <p class="team-role">Power BI Engineer & Data Engineer</p>
-                                <p class="team-bio">
-                                    Industrial Engineer with a Master's in Applied Analytics,
-                                    specialized in Data Engineering and Data Science across oil &
-                                    gas, telecom, and tech sectors. Expert in database design, ETL
-                                    pipelines, and cloud-based analytics with Azure and Databricks.
-                                </p>
-                                <div class="team-skills">
-                                    <span class="skill-tag">SQL</span>
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag">Power BI</span>
-                                    <span class="skill-tag">Azure</span>
-                                    <span class="skill-tag">Databricks</span>
-                                    <span class="skill-tag">Snowflake</span>
-                                </div>
-                                <div class="team-certs">
-                                    <span
-                                        class="cert-badge"
-                                        title="Data Engineer Associate - DataCamp"
-                                        >DE Associate</span
-                                    >
-                                    <span
-                                        class="cert-badge"
-                                        title="Diploma in Big Data & Business Analytics"
-                                        >Big Data</span
-                                    >
-                                    <span
-                                        class="cert-badge"
-                                        title="MSc Applied Analytics - Universidad de la Sabana"
-                                        >MSc Analytics</span
-                                    >
-                                </div>
-                                <div class="team-highlights">
-                                    <div class="highlight">
-                                        <span class="highlight-number">4+</span>
-                                        <span class="highlight-label"
-                                            >Years in data engineering</span
-                                        >
-                                    </div>
-                                    <div class="highlight">
-                                        <span class="highlight-number">3</span>
-                                        <span class="highlight-label">Industry sectors</span>
-                                    </div>
-                                </div>
-                                <div class="team-links">
-                                    <a
-                                        href="https://linkedin.com/in/david-camilo-ardila-data-powerbi-bigdata/"
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="team-social"
-                                        title="LinkedIn"
-                                        id="david-linkedin"
-                                    >
-                                        <svg
-                                            width="18"
-                                            height="18"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-                                            />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
+                    </article>
+                    <article class="tm">
+                        <div class="tm-avatar">
+                            <picture>
+                                <source srcset="assets/tomas-cardenas.webp" type="image/webp" />
+                                <img
+                                    src="assets/tomas-cardenas.jpg"
+                                    alt="Tomás Cárdenas"
+                                    width="400"
+                                    height="400"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
-                    </div>
+                        <div>
+                            <h3 class="tm-name">Tomás Cárdenas</h3>
+                            <p class="tm-role" data-i18n="team.r2">Data Scientist</p>
+                            <p class="tm-skills">Python · ML · Forecasting · Power BI · Tableau</p>
+                        </div>
+                    </article>
+                    <article class="tm">
+                        <div class="tm-avatar">
+                            <picture>
+                                <source srcset="assets/david-ardila.webp" type="image/webp" />
+                                <img
+                                    src="assets/david-ardila.jpg"
+                                    alt="David Ardila"
+                                    width="400"
+                                    height="400"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
+                        </div>
+                        <div>
+                            <h3 class="tm-name">David Ardila</h3>
+                            <p class="tm-role" data-i18n="team.r3">Power BI Engineer</p>
+                            <p class="tm-skills">SQL · Azure · Databricks · Snowflake · BI</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Contact / CTA Section -->
-        <section id="contact" class="contact">
-            <div class="section-container">
-                <div class="contact-wrapper" data-animate="fade-up">
-                    <div class="contact-glow"></div>
-                    <span class="section-tag">Ready to Start?</span>
-                    <h2 class="section-title">
-                        Let's build something<br /><span class="text-gradient">extraordinary</span>
-                        together
-                    </h2>
-                    <p class="section-desc">
-                        Whether you need a scalable data platform, cloud migration, or AI-powered
-                        solutions — we're here to help you transform your business.
-                    </p>
-                    <div class="contact-actions">
-                        <a
-                            href="mailto:contacto@danielperico.com"
-                            class="btn btn-primary btn-lg"
-                            id="contact-email"
-                        >
-                            <svg
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+        <section id="contact" class="cta">
+            <div class="cta-card">
+                <div class="cta-grid">
+                    <div>
+                        <span class="eyebrow" data-i18n="cta.eyebrow">Get started</span>
+                        <!-- R7 i18n contract: dictionary value for `cta.title` MUST keep the
+                             `<span class="green">…<span class="punto"></span></span>` tree
+                             intact so the green dot stays painted on language switch. -->
+                        <h2 data-i18n-html="cta.title">
+                            Tell us what's<br />in the
+                            <span class="green">way<span class="punto"></span></span>
+                        </h2>
+                        <p class="lede" data-i18n="cta.lede">
+                            Send a brief — current state, target outcome, timeline. We'll come back
+                            within two business days with a scoped proposal, fixed-price where
+                            possible.
+                        </p>
+                        <div class="cta-actions">
+                            <!-- TODO(redesign-plan Res #2): hello@2dato.com mailbox to be
+                                 provisioned out-of-band; mailto will bounce until then. -->
+                            <a
+                                href="mailto:hello@2dato.com"
+                                class="btn btn-primary"
+                                data-i18n="nav.cta"
+                                >Request a proposal →</a
                             >
-                                <path
-                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                            Contact Us
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/danielpesa7"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-ghost btn-lg"
-                            id="contact-linkedin"
-                        >
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-                                />
-                            </svg>
-                            LinkedIn
-                        </a>
+                            <!-- TODO(R10): wire to Calendly/Cal.com booking URL; href="#" is
+                                 a placeholder copied verbatim from the W6 prototype. -->
+                            <a href="#" class="btn btn-ghost" data-i18n="cta.book"
+                                >Book a 30-min call</a
+                            >
+                        </div>
                     </div>
+                    <!-- "Console" sidebar. Decorative glyphs (›, #) live in
+                         `aria-hidden` spans so SR users only hear the actual values.
+                         Email, URL and city are real links so they can be acted on. -->
+                    <ul class="cta-side">
+                        <li>
+                            <span class="l" aria-hidden="true">›</span>
+                            <a href="mailto:hello@2dato.com" class="v">hello@2dato.com</a>
+                        </li>
+                        <li>
+                            <span class="l" aria-hidden="true">›</span>
+                            <a href="https://www.2dato.co" class="v">www.2dato.co</a>
+                        </li>
+                        <li>
+                            <span class="l" aria-hidden="true">›</span>
+                            <span class="v">Bogotá, Colombia</span>
+                        </li>
+                        <li class="cta-side-meta">
+                            <span class="l" aria-hidden="true">#</span>
+                            <span class="c" data-i18n="cta.m1"
+                                >response within 2 business days</span
+                            >
+                        </li>
+                        <li>
+                            <span class="l" aria-hidden="true">#</span>
+                            <span class="c" data-i18n="cta.m2"
+                                >proposals fixed-price where possible</span
+                            >
+                        </li>
+                        <li>
+                            <span class="l" aria-hidden="true">#</span>
+                            <span class="c" data-i18n="cta.m3">NDA on request</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer" id="footer">
-            <div class="section-container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <img src="assets/logo-2dato.png" alt="2Dato" class="footer-logo-img" />
-                        <p>IT & AI Solutions from Colombia to the World</p>
-                    </div>
-                    <div class="footer-links">
-                        <a href="#about">About</a>
-                        <a href="#services">Services</a>
-                        <a href="#team">Team</a>
-                        <a href="#contact">Contact</a>
-                    </div>
+        <footer class="foot-w6">
+            <div class="foot-inner">
+                <div class="foot-brand">
+                    <a href="#hero" class="wordmark" aria-label="2DATO home"
+                        ><span class="two">2</span><span class="dot" aria-hidden="true"></span
+                        ><span class="rest">DATO</span></a
+                    >
+                    <div class="tag" data-i18n="hero.tag">Data-Driven · AI-Powered</div>
                 </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2026 2Dato. All rights reserved.</p>
-                </div>
+                <nav class="foot-links" aria-label="Footer">
+                    <a href="#capabilities" data-i18n="nav.cap">Capabilities</a>
+                    <a href="#approach" data-i18n="nav.app">Approach</a>
+                    <a href="#industries" data-i18n="nav.ind">Industries</a>
+                    <a href="#team" data-i18n="nav.team">Team</a>
+                    <a href="#contact" data-i18n="footer.contact">Contact</a>
+                </nav>
+                <div class="foot-meta" data-i18n="footer.meta">© 2026 2DATO · Bogotá → World</div>
             </div>
         </footer>
 
-        <script src="main.js"></script>
+        <script defer src="i18n.js"></script>
+        <script defer src="main.js"></script>
     </body>
 </html>
