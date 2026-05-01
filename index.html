@@ -1246,8 +1246,82 @@
             </div>
         </section>
 
-        <!-- Contact / CTA Section -->
-        <section id="contact" class="contact">
+        <!-- CTA (R6) — W6 Hybrid CTA card.
+             id="contact" is owned by this section so the nav anchor and
+             skip-link land here; legacy contact below is renamed to
+             #contact-legacy and removed in R9. -->
+        <section id="contact" class="cta">
+            <div class="cta-card">
+                <div class="cta-grid">
+                    <div>
+                        <span class="eyebrow" data-i18n="cta.eyebrow">Get started</span>
+                        <!-- R7 i18n contract: dictionary value for `cta.title` MUST keep the
+                             `<span class="green">…<span class="punto"></span></span>` tree
+                             intact so the green dot stays painted on language switch. -->
+                        <h2 data-i18n-html="cta.title">
+                            Tell us what's<br />in the
+                            <span class="green">way<span class="punto"></span></span>
+                        </h2>
+                        <p class="lede" data-i18n="cta.lede">
+                            Send a brief — current state, target outcome, timeline. We'll come back
+                            within two business days with a scoped proposal, fixed-price where
+                            possible.
+                        </p>
+                        <div class="cta-actions">
+                            <!-- TODO(redesign-plan Res #2): hello@2dato.com mailbox to be
+                                 provisioned out-of-band; mailto will bounce until then. -->
+                            <a
+                                href="mailto:hello@2dato.com"
+                                class="btn btn-primary"
+                                data-i18n="nav.cta"
+                                >Request a proposal →</a
+                            >
+                            <!-- TODO(R10): wire to Calendly/Cal.com booking URL; href="#" is
+                                 a placeholder copied verbatim from the W6 prototype. -->
+                            <a href="#" class="btn btn-ghost" data-i18n="cta.book"
+                                >Book a 30-min call</a
+                            >
+                        </div>
+                    </div>
+                    <!-- "Console" sidebar. Decorative glyphs (›, #) live in
+                         `aria-hidden` spans so SR users only hear the actual values.
+                         Email, URL and city are real links so they can be acted on. -->
+                    <ul class="cta-side">
+                        <li>
+                            <span class="l" aria-hidden="true">›</span>
+                            <a href="mailto:hello@2dato.com" class="v">hello@2dato.com</a>
+                        </li>
+                        <li>
+                            <span class="l" aria-hidden="true">›</span>
+                            <a href="https://www.2dato.co" class="v">www.2dato.co</a>
+                        </li>
+                        <li>
+                            <span class="l" aria-hidden="true">›</span>
+                            <span class="v">Bogotá, Colombia</span>
+                        </li>
+                        <li class="cta-side-meta">
+                            <span class="l" aria-hidden="true">#</span>
+                            <span class="c" data-i18n="cta.m1"
+                                >response within 2 business days</span
+                            >
+                        </li>
+                        <li>
+                            <span class="l" aria-hidden="true">#</span>
+                            <span class="c" data-i18n="cta.m2"
+                                >proposals fixed-price where possible</span
+                            >
+                        </li>
+                        <li>
+                            <span class="l" aria-hidden="true">#</span>
+                            <span class="c" data-i18n="cta.m3">NDA on request</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / CTA Section (legacy — replaced by R6 #contact above; removed in R9) -->
+        <section id="contact-legacy" class="contact">
             <div class="section-container">
                 <div class="contact-wrapper" data-animate="fade-up">
                     <div class="contact-glow"></div>
@@ -1302,8 +1376,33 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer" id="footer">
+        <!-- Footer (R6) — W6 Hybrid footer.
+             Two <footer> elements coexist during migration; the legacy one
+             below is removed in R9, leaving only this contentinfo landmark. -->
+        <footer class="foot-w6">
+            <div class="foot-inner">
+                <div class="foot-brand">
+                    <a href="#hero" class="wordmark" aria-label="2DATO home"
+                        ><span class="two">2</span><span class="dot" aria-hidden="true"></span
+                        ><span class="rest">DATO</span></a
+                    >
+                    <div class="tag" data-i18n="hero.tag">Data-Driven · AI-Powered</div>
+                </div>
+                <nav class="foot-links" aria-label="Footer">
+                    <a href="#capabilities" data-i18n="nav.cap">Capabilities</a>
+                    <a href="#approach" data-i18n="nav.app">Approach</a>
+                    <a href="#industries" data-i18n="nav.ind">Industries</a>
+                    <a href="#team" data-i18n="nav.team">Team</a>
+                    <a href="#contact" data-i18n="footer.contact">Contact</a>
+                </nav>
+                <div class="foot-meta" data-i18n="footer.meta">© 2026 2DATO · Bogotá → World</div>
+            </div>
+        </footer>
+
+        <!-- Footer (legacy — replaced by R6 .foot-w6 above; removed in R9).
+             Demoted to <div> so it stops competing with the W6 footer for
+             the contentinfo landmark (html-validate unique-landmark rule). -->
+        <div class="footer" id="footer">
             <div class="section-container">
                 <div class="footer-content">
                     <div class="footer-brand">
@@ -1321,7 +1420,7 @@
                     <p>&copy; 2026 2Dato. All rights reserved.</p>
                 </div>
             </div>
-        </footer>
+        </div>
 
         <script src="main.js"></script>
     </body>
