@@ -636,3 +636,257 @@ section {
         gap: 24px;
     }
 }
+
+/* ========================================================================
+   Section: Capabilities (R4)
+   ======================================================================== */
+
+.caps {
+    background-color: var(--paper);
+}
+
+.caps-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 56px;
+}
+
+.caps-title {
+    font-family: var(--display);
+    font-size: 52px;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    color: var(--navy);
+    margin: 16px 0 0;
+}
+
+.caps-title .green,
+.approach-title .green {
+    color: var(--green);
+}
+
+.caps-head .pitch {
+    font-size: 17px;
+    color: var(--navy-75);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Hairline dividers via 1px gap on a navy-15 background showing through. */
+.caps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--navy-15);
+    border: 1px solid var(--navy-15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.cap {
+    background: #fff;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: background 0.2s ease;
+}
+
+.cap:hover {
+    background: var(--paper-2);
+}
+
+.cap-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cap-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--green);
+    font-weight: 600;
+}
+
+.cap-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--green-15);
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cap h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+.cap p {
+    font-size: 14px;
+    color: var(--navy-75);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.cap-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.cap-stack span {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--paper-2);
+    color: var(--navy-75);
+    letter-spacing: 0.5px;
+}
+
+/* ========================================================================
+   Section: Approach (R4)
+   ======================================================================== */
+
+.approach {
+    background: var(--navy);
+    color: #fff;
+}
+
+.approach-container {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.approach-title {
+    font-family: var(--display);
+    font-size: 52px;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    color: #fff;
+    margin: 16px 0 24px;
+}
+
+.approach .pitch {
+    color: rgb(255 255 255 / 70%);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0;
+}
+
+/* Inside .approach the eyebrow flips to white-on-navy. */
+.approach .eyebrow {
+    color: rgb(255 255 255 / 55%);
+}
+
+.approach .eyebrow::before {
+    background: var(--green);
+}
+
+/* Steps as semantic ordered list — improves AT semantics over the prototype
+   which used <div>. Visual layout unchanged. */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.step {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgb(255 255 255 / 10%);
+    align-items: start;
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step-num {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--green);
+    font-weight: 600;
+    padding-top: 4px;
+    letter-spacing: 0.5px;
+}
+
+.step-title {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 6px;
+    letter-spacing: -0.3px;
+    color: #fff;
+}
+
+.step .step-body p {
+    color: rgb(255 255 255 / 65%);
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 520px;
+}
+
+/* `.when` was rgb(255 255 255 / 45%) in the prototype — that lands at ~4.0:1
+   on navy at 11px, below WCAG AA (4.5:1 for normal text). Bumped to 60% to
+   reach ~5.5:1. Same family of fix as the contrast debt tracked for R10. */
+.step .when {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: rgb(255 255 255 / 60%);
+    letter-spacing: 1px;
+    padding-top: 6px;
+    white-space: nowrap;
+}
+
+/* Capabilities + Approach responsive (matches prototype @media 960) */
+@media (max-width: 960px) {
+    .caps-head,
+    .approach-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .caps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .caps-title,
+    .approach-title {
+        font-size: 36px;
+    }
+
+    .step {
+        grid-template-columns: 80px 1fr;
+        gap: 16px;
+    }
+
+    .step .when {
+        grid-column: 2;
+        padding-top: 4px;
+    }
+}
