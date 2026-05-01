@@ -890,3 +890,251 @@ section {
         padding-top: 4px;
     }
 }
+
+/* ===== R5: Promise + Industries + Team ===== */
+
+/* --- Promise --- */
+.promise {
+    background: var(--navy);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.promise::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: var(--green);
+    opacity: 0.1;
+    filter: blur(80px);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.promise-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.promise .eyebrow {
+    color: rgb(255 255 255 / 55%);
+}
+
+.promise .eyebrow::before {
+    background: var(--green);
+}
+
+.promise blockquote {
+    font-family: var(--display);
+    font-size: 44px;
+    line-height: 1.18;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: #fff;
+    margin: 28px 0 24px;
+}
+
+.promise blockquote .green {
+    color: var(--green);
+    font-weight: 500;
+}
+
+/* `.punto` itself uses the global rule (styles.css:197). The blockquote
+   selector below is kept only as a hook for future per-context tuning. */
+
+.promise .attribution {
+    margin-top: 36px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: rgb(255 255 255 / 50%);
+}
+
+/* --- Industries --- */
+.inds {
+    background: var(--paper-2);
+}
+
+.inds-head {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.inds-title {
+    font-family: var(--display);
+    font-size: 44px;
+    font-weight: 500;
+    letter-spacing: -1.2px;
+    color: var(--navy);
+    margin: 16px 0 0;
+}
+
+.inds-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ind {
+    background: #fff;
+    border: 1px solid var(--navy-15);
+    border-radius: 10px;
+    padding: 24px 16px;
+    text-align: center;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.ind:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+}
+
+.ind-icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 12px;
+    color: var(--navy-55);
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.ind:hover .ind-icon {
+    color: var(--green);
+}
+
+.ind .name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+/* --- Team --- */
+.team-w6 {
+    background: var(--paper);
+}
+
+.team-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 40px;
+    gap: 32px;
+}
+
+.team-title {
+    font-family: var(--display);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--navy);
+    margin: 12px 0 0;
+}
+
+.team-head .tagline {
+    color: var(--navy-75);
+    font-size: 14px;
+    max-width: 320px;
+    text-align: right;
+    margin: 0;
+}
+
+/* Scoped to `#team` so the legacy `.team-grid` inside `#team-legacy` is
+   left alone until R9 deletes that block. */
+#team .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.tm {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid var(--navy-15);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.tm-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--paper-2);
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px var(--navy-15);
+}
+
+.tm-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tm-name {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0;
+}
+
+.tm-role {
+    font-size: 12px;
+    color: var(--green);
+    font-family: var(--mono);
+    letter-spacing: 0.5px;
+    margin: 2px 0 0;
+    text-transform: uppercase;
+}
+
+.tm-skills {
+    font-size: 12px;
+    color: var(--navy-75);
+    margin: 8px 0 0;
+    line-height: 1.5;
+}
+
+/* R5 responsive (matches prototype @media 960) */
+@media (max-width: 960px) {
+    .promise blockquote {
+        font-size: 28px;
+    }
+
+    .inds-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .inds-title {
+        font-size: 32px;
+    }
+
+    .team-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .team-head .tagline {
+        text-align: left;
+    }
+
+    #team .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
