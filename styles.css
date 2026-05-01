@@ -8,6 +8,11 @@
     --navy-35: #a3abb5;
     --navy-15: #d5d9de;
     --green: #06aa78;
+
+    /* R10 contrast fix: --green-dark is a deeper shade used where --green as
+       foreground on white fails WCAG AA (3.0:1). #057a56 yields ~5.3:1 on white,
+       passing AA for normal text. Used in .cap-num. */
+    --green-dark: #057a56;
     --green-75: #44bf9a;
     --green-55: #6ecfb3;
     --green-35: #a3e0ce;
@@ -149,9 +154,13 @@ section {
     appearance: none;
 }
 
+/* R10 contrast fix: white (#fff) on --green is ~3.0:1, fails WCAG AA.
+   Navy on --green is ~5.8:1, passes AA for normal text.
+   Decision: navy text preserves the green brand surface and is closer to
+   brand-guide intent than switching to a white button on dark background. */
 .btn-primary {
     background: var(--green);
-    color: #fff;
+    color: var(--navy);
     border-color: var(--green);
 }
 
@@ -331,8 +340,11 @@ section {
     z-index: 1;
 }
 
+/* R10 contrast fix: white (#fff) on --green is ~3.0:1, fails WCAG AA.
+   Navy on --green is ~5.8:1, passes AA.
+   The active pill stays green; text flips to navy for legibility. */
 .lang-toggle button.on {
-    color: #fff;
+    color: var(--navy);
 }
 
 /* Override the global green :focus-visible so the ring stays visible
@@ -722,11 +734,14 @@ section {
     justify-content: space-between;
 }
 
+/* R10 contrast fix: --green on white is ~3.0:1, fails WCAG AA.
+   --green-dark (#057a56) on white is ~5.3:1, passes AA.
+   Element is aria-hidden (decorative ordinal) but fixed for completeness. */
 .cap-num {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 1.5px;
-    color: var(--green);
+    color: var(--green-dark);
     font-weight: 600;
 }
 
@@ -1246,6 +1261,9 @@ section {
 .cta .btn-ghost:hover {
     border-color: #fff;
 }
+
+/* R10 contrast note: .btn-primary inside .cta inherits the global fix
+   (navy text on green background, ~5.8:1). No override needed here. */
 
 .cta-side {
     background: rgb(255 255 255 / 6%);
