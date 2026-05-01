@@ -7,12 +7,14 @@
 
 import { chromium } from '@playwright/test';
 import sharp from 'sharp';
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const out = resolve(__dirname, '..', 'assets', 'og.png');
+const logoLightPath = resolve(__dirname, '..', 'assets', 'logo-2dato-light@og.png');
+const logoLightDataUri = `data:image/png;base64,${(await readFile(logoLightPath)).toString('base64')}`;
 
 const WIDTH = 1200;
 const HEIGHT = 630;
@@ -75,15 +77,26 @@ const html = `<!doctype html>
     position: relative;
     z-index: 1;
     height: 100%;
-    padding: 72px 80px;
+    padding: 64px 80px;
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: auto 1fr auto;
-    gap: 24px;
+    grid-template-rows: auto 1fr;
+    gap: 32px;
     align-items: start;
   }
-  .eyebrow {
+  .header {
     grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .header .brand {
+    display: block;
+    width: 200px;
+    height: auto;
+  }
+  .eyebrow {
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 16px;
     letter-spacing: 0.18em;
@@ -113,61 +126,27 @@ const html = `<!doctype html>
     align-self: center;
     font-family: 'Space Grotesk', system-ui, -apple-system, Helvetica, Arial, sans-serif;
     font-weight: 600;
-    font-size: 88px;
-    line-height: 0.96;
-    letter-spacing: -2.5px;
+    font-size: 76px;
+    line-height: 0.98;
+    letter-spacing: -2px;
     color: var(--paper);
     max-width: 760px;
   }
   .headline .accent { color: var(--green); }
-  .meta {
-    grid-column: 1 / 3;
-    align-self: end;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(255 255 255 / 0.12);
-    padding-top: 24px;
-  }
-  .wordmark {
-    font-family: 'Space Grotesk', system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    letter-spacing: -0.5px;
-    color: var(--paper);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .wordmark .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: var(--green);
-    border-radius: 50%;
-    transform: translateY(-2px);
-  }
-  .where {
-    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 18px;
-    letter-spacing: 0.04em;
-    color: rgba(255 255 255 / 0.72);
-  }
 </style>
 </head>
 <body>
 <main class="stage">
-  <p class="eyebrow">Data &amp; AI Consulting</p>
+  <div class="header">
+    <img class="brand" src="${logoLightDataUri}" alt="2DATO" />
+    <p class="eyebrow">Data &amp; AI Consulting</p>
+  </div>
   <h1 class="headline">From a single point of data to decisions that <span class="accent">run themselves.</span></h1>
   <div class="punto" aria-hidden="true">
     <span class="ring r1"></span>
     <span class="ring r2"></span>
     <span class="ring r3"></span>
     <span class="core"></span>
-  </div>
-  <div class="meta">
-    <span class="wordmark">2<span class="dot"></span>DATO</span>
-    <span class="where">Bogot&aacute; &rarr; Worldwide</span>
   </div>
 </main>
 </body>
