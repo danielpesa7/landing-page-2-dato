@@ -11,14 +11,20 @@
     "lint:html": "html-validate \"*.html\"",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "check": "npm run format:check && npm run lint",
-    "images:optimize": "node scripts/optimize-team-photos.mjs"
+    "images:optimize": "node scripts/optimize-team-photos.mjs",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:a11y": "playwright test tests/e2e/a11y.spec.ts"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.49.0",
     "eslint": "^10.2.1",
     "globals": "^17.5.0",
     "html-validate": "^10.13.1",
     "prettier": "^3.8.3",
+    "serve": "^14.2.4",
     "sharp": "^0.34.5",
     "stylelint": "^17.9.1",
     "stylelint-config-standard": "^40.0.0"
