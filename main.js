@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initScrollAnimations();
     initNavigation();
+    initSmoothScroll();
     initCounters();
     initCodeTyping();
 });
@@ -205,10 +206,23 @@ function initNavigation() {
                 e.preventDefault();
                 const navHeight = nav ? nav.offsetHeight : 0;
                 const y = target.getBoundingClientRect().top + window.scrollY - navHeight;
-                window.scrollTo({ top: y, behavior: 'smooth' });
+                const prefersReduced = window.matchMedia(
+                    '(prefers-reduced-motion: reduce)'
+                ).matches;
+                window.scrollTo({ top: y, behavior: prefersReduced ? 'instant' : 'smooth' });
             }
         });
     });
+}
+
+/* --- Smooth Scroll Offset --- */
+function initSmoothScroll() {
+    const nav = document.querySelector('nav.nav');
+    if (!nav) return;
+    const update = () =>
+        document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    update();
+    window.addEventListener('resize', update, { passive: true });
 }
 
 /* --- Animated Counters --- */
