@@ -902,7 +902,7 @@ section {
 }
 
 .promise::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 8%;
@@ -946,15 +946,8 @@ section {
     font-weight: 500;
 }
 
-.promise blockquote .punto {
-    display: inline-block;
-    width: 0.45em;
-    height: 0.45em;
-    border-radius: 50%;
-    background: var(--green);
-    margin-left: 0.08em;
-    vertical-align: 0.05em;
-}
+/* `.punto` itself uses the global rule (styles.css:197). The blockquote
+   selector below is kept only as a hook for future per-context tuning. */
 
 .promise .attribution {
     margin-top: 36px;
@@ -1057,7 +1050,9 @@ section {
     margin: 0;
 }
 
-.team-grid {
+/* Scoped to `#team` so the legacy `.team-grid` inside `#team-legacy` is
+   left alone until R9 deletes that block. */
+#team .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -1139,7 +1134,7 @@ section {
         text-align: left;
     }
 
-    .team-grid {
+    #team .team-grid {
         grid-template-columns: 1fr;
     }
 }
