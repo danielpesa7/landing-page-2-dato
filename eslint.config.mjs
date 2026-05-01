@@ -26,6 +26,15 @@ export default [
         },
     },
     {
-        ignores: ['assets/**', 'node_modules/**', 'tasks/**', 'new_design/**'],
+        ignores: [
+            'assets/**',
+            'node_modules/**',
+            'tasks/**',
+            'new_design/**',
+            'tests/**',
+            'playwright-report/**',
+            'test-results/**',
+            'playwright.config.ts',
+        ],
     },
 ];
