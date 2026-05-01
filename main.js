@@ -36,12 +36,13 @@ function initScrollAnimations() {
 /* --- Smooth Scroll Offset + Anchor Navigation --- */
 function initSmoothScroll() {
     const nav = document.querySelector('nav.nav');
-    if (!nav) return;
 
-    const update = () =>
-        document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
-    update();
-    window.addEventListener('resize', update, { passive: true });
+    if (nav) {
+        const update = () =>
+            document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+        update();
+        window.addEventListener('resize', update, { passive: true });
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
@@ -50,7 +51,8 @@ function initSmoothScroll() {
             const target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
-                const y = target.getBoundingClientRect().top + window.scrollY - nav.offsetHeight;
+                const navHeight = nav ? nav.offsetHeight : 0;
+                const y = target.getBoundingClientRect().top + window.scrollY - navHeight;
                 const prefersReduced = window.matchMedia(
                     '(prefers-reduced-motion: reduce)'
                 ).matches;
