@@ -35,7 +35,7 @@ var CATALOG = {
         /* Outcomes */
         'out.1': 'Faster data retrieval, on average',
         'out.2': 'Reduction in manual processing',
-        'out.3': 'Industries served — energy, telecom, CPG',
+        'out.3': 'Industries delivered — energy, telecom, CPG',
         'out.4': 'Engagements across Latin America & beyond',
 
         /* Capabilities */
@@ -101,7 +101,7 @@ var CATALOG = {
 
         /* Industries */
         'ind.eyebrow': 'Industries',
-        'ind.title': 'Where we’ve shipped.',
+        'ind.title': 'Sectors we serve.',
         'ind.energy': 'Energy',
         'ind.tel': 'Telecom',
         'ind.cpg': 'CPG & Retail',
@@ -155,7 +155,7 @@ var CATALOG = {
         /* Outcomes */
         'out.1': 'Más rápida recuperación de datos, en promedio',
         'out.2': 'Reducción en procesamiento manual',
-        'out.3': 'Industrias atendidas — energía, telecom, CPG',
+        'out.3': 'Industrias con entregas — energía, telecom, CPG',
         'out.4': 'Proyectos en Latinoamérica & más allá',
 
         /* Capabilities */
@@ -221,7 +221,7 @@ var CATALOG = {
 
         /* Industries */
         'ind.eyebrow': 'Industrias',
-        'ind.title': 'Dónde hemos entregado.',
+        'ind.title': 'Sectores que atendemos.',
         'ind.energy': 'Energía',
         'ind.tel': 'Telecomunicaciones',
         'ind.cpg': 'CPG & Retail',
