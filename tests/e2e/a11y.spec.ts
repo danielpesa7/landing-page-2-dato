@@ -32,16 +32,8 @@ test('axe scan — EN: no serious or critical violations', async ({ page }) => {
 
 test('axe scan — ES: no serious or critical violations', async ({ page }) => {
     await page.goto('/?lang=es');
-    // Wait for ES to be applied before scanning
-    await expect
-        .poll(
-            async () => {
-                const btn = page.locator('[data-set-lang="es"]');
-                return btn.getAttribute('aria-pressed');
-            },
-            { timeout: 3000 }
-        )
-        .toBe('true');
+    // Wait for ES to be applied before scanning (parity with the EN gate).
+    await expect(page.locator('[data-set-lang="es"]')).toHaveAttribute('aria-pressed', 'true');
 
     const results = await new AxeBuilder({ page }).withTags(AXE_TAGS).analyze();
 
