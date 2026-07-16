@@ -1084,13 +1084,9 @@ section {
     background: transparent;
 }
 
-/* Second card offset down — zig-zag instead of a flat, even row. */
-#team .team-grid > .tm:nth-child(2) {
-    margin-top: 56px;
-}
-
 .tm-avatar {
-    width: 100%;
+    width: 200px;
+    max-width: 100%;
     aspect-ratio: 1;
     border-radius: 16px;
     background: var(--paper-2);
@@ -1108,25 +1104,25 @@ section {
 
 .tm-name {
     font-family: var(--display);
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 600;
     color: var(--navy);
     margin: 0;
 }
 
 .tm-role {
-    font-size: 12px;
+    font-size: 15px;
     color: var(--green-dark);
     font-family: var(--mono);
     letter-spacing: 0.5px;
-    margin: 2px 0 0;
+    margin: 4px 0 0;
     text-transform: uppercase;
 }
 
 .tm-skills {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--navy-75);
-    margin: 8px 0 0;
+    margin: 10px 0 0;
     line-height: 1.5;
 }
 
@@ -1156,10 +1152,6 @@ section {
 
     #team .team-grid {
         grid-template-columns: 1fr;
-    }
-
-    #team .team-grid > .tm:nth-child(2) {
-        margin-top: 0;
     }
 }
 
