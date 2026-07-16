@@ -5,7 +5,39 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
+    initScrollReveal();
 });
+
+/* --- Scroll Reveal --- */
+function initScrollReveal() {
+    const items = document.querySelectorAll('[data-animate]');
+    if (!items.length) return;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const groups = new Map();
+    items.forEach((el) => {
+        const siblings = groups.get(el.parentElement) || [];
+        el.style.transitionDelay = `${Math.min(siblings.length, 6) * 60}ms`;
+        siblings.push(el);
+        groups.set(el.parentElement, siblings);
+    });
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+
+    items.forEach((el) => observer.observe(el));
+}
 
 /* --- Smooth Scroll Offset + Anchor Navigation --- */
 function initSmoothScroll() {
